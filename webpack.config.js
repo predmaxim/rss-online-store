@@ -1,6 +1,5 @@
 // import path, { join } from 'path';
 import PugPlugin, { loader as _loader } from 'pug-plugin';
-import postcssPresetEnv from 'postcss-preset-env';
 import CompressionPlugin from 'compression-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { fileURLToPath } from 'url';
