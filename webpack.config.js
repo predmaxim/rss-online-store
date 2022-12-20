@@ -10,21 +10,11 @@ const __dirname = dirname(__filename);
 
 const pages = ['index'];
 const aliases = {
-  LightTheme: path.join(__dirname, 'src/themes/theme-light.scss'),
-  DarkTheme: path.join(__dirname, 'src/themes/theme-dark.scss'),
-  Img: path.join(__dirname, 'src/assets/img/'),
   Base: path.join(__dirname, 'src/components/base/'),
-  BirdsDescription: path.join(__dirname, 'src/components/birds-description/'),
-  BirdsList: path.join(__dirname, 'src/components/birds-list/'),
   Footer: path.join(__dirname, 'src/components/footer/'),
   Header: path.join(__dirname, 'src/components/header/'),
-  Player: path.join(__dirname, 'src/components/player/'),
-  Score: path.join(__dirname, 'src/components/score/'),
-  Settings: path.join(__dirname, 'src/components/settings/'),
   HomePage: path.join(__dirname, 'src/pages/home/'),
-  Slider: path.join(__dirname, 'src/components/slider/'),
-  Gallery: path.join(__dirname, 'src/components/gallery/'),
-  Lang: path.join(__dirname, 'src/lang/'),
+  ShopPage: path.join(__dirname, 'src/pages/shop/'),
 };
 
 const devServer = (isDev) =>
