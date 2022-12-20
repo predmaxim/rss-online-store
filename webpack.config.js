@@ -1,20 +1,19 @@
-// import path, { resolve as _resolve, join } from 'path';
+// import path, { join } from 'path';
 import PugPlugin, { loader as _loader } from 'pug-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const pages = ['index'];
 const aliases = {
-  Base: path.join(__dirname, 'src/components/base/'),
-  Footer: path.join(__dirname, 'src/components/footer/'),
-  Header: path.join(__dirname, 'src/components/header/'),
-  HomePage: path.join(__dirname, 'src/pages/home/'),
-  ShopPage: path.join(__dirname, 'src/pages/shop/'),
+  Base: join(__dirname, 'src/components/base/'),
+  Footer: join(__dirname, 'src/components/footer/'),
+  Header: join(__dirname, 'src/components/header/'),
+  Home: join(__dirname, 'src/pages/home/'),
+  Shop: join(__dirname, 'src/pages/shop/'),
 };
 
 const devServer = (isDev) =>
@@ -22,13 +21,13 @@ const devServer = (isDev) =>
     ? {
         devServer: {
           open: false,
-          hot: false,
+          hot: true,
           port: 9000,
           compress: false,
-          watchFiles: {
-            paths: ['src/**/*.*'],
-            options: { usePolling: true },
-          },
+          // watchFiles: {
+          //   paths: ['src/**/*.*'],
+          //   options: { usePolling: true },
+          // },
           static: { directory: join(__dirname, 'src') },
         },
         // stats: 'errors-only'
@@ -38,23 +37,33 @@ const devServer = (isDev) =>
 export default ({ isDev }) => ({
   mode: isDev ? 'development' : 'production',
   devtool: isDev ? 'inline-source-map' : 'source-map',
-  entry: pages.reduce((config, page) => {
-    config[page] = `./src/${page}.pug`;
-    return config;
-  }, {}),
+  entry: {
+    index: './src/pages/home/home.pug',
+    shop: './src/pages/shop/shop.pug',
+  },
   output: {
     path: join(__dirname, 'dist'),
-    filename: 'assets/js/[name].[contenthash:8].js', // output filename of JS files
+    filename: 'js/[name].[contenthash:8].js', // output filename of JS files
     clean: true,
   },
   optimization: {
     splitChunks: { chunks: 'all' },
     minimize: !isDev,
   },
-  resolve: { alias: aliases },
+  resolve: { alias: aliases, extensions: ['.ts', '.js'] },
   module: {
     rules: [
-      { test: /\.pug$/, loader: _loader },
+      {
+        test: /\.pug$/,
+        loader: _loader,
+      },
+      {
+        test: /\.ts$/i,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+        // include: '/src/**/*',
+        generator: { filename: '[name].[contenthash:8][ext][query]' },
+      },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i,
         type: 'asset/resource',
