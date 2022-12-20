@@ -7,7 +7,8 @@
   "scripts": {
     "build": "npm run lint && webpack",
     "dev": "webpack serve --env isDev",
-    "lint": "npx eslint --fix \"src/**/*.ts\" && npx prettier --write src/ && npx stylelint --fix \"**/*.scss\"",
+    "lint": "npx eslint . \"src/**/*.ts\" && npx prettier --write src/ && npx stylelint \"**/*.scss\"",
+    "fixlint": "npx eslint --fix \"src/**/*.ts\" && npx prettier --write src/ && npx stylelint --fix \"**/*.scss\"",
     "prettier": "prettier --write src/",
     "stylelint": "npx stylelint  --fix \"**/*.scss\"",
     "predeploy": "npm run lint && npm run build",
