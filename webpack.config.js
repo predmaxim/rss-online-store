@@ -9,12 +9,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const aliases = {
-  Src: join(__dirname, 'src'),
-  Base: join(__dirname, 'src/components/base'),
-  Footer: join(__dirname, 'src/components/footer'),
-  Header: join(__dirname, 'src/components/header'),
-  Home: join(__dirname, 'src/pages/home'),
-  Shop: join(__dirname, 'src/pages/shop'),
+  Src: join(__dirname, './src'),
+  Base: join(__dirname, './src/components/base'),
+  Footer: join(__dirname, './src/components/footer'),
+  HomeHeader: join(__dirname, './src/components/home-header'),
+  ShopHeader: join(__dirname, './src/components/shop-header'),
+  Home: join(__dirname, './src/pages/home'),
+  Shop: join(__dirname, './src/pages/shop'),
 };
 
 const devServer = (isDev) =>
