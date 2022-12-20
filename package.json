@@ -9,7 +9,7 @@
     "dev": "webpack serve --env isDev",
     "lint": "npx eslint --fix \"src/**/*.ts\" && npx prettier --write src/ && npx stylelint --fix \"**/*.scss\"",
     "prettier": "prettier --write src/",
-    "stylelint": "npx stylelint \"**/*.scss\"",
+    "stylelint": "npx stylelint  --fix \"**/*.scss\"",
     "predeploy": "npm run lint && npm run build",
     "deploy": "gh-pages -d dist -e rss-online-store/ --message 'Deploy to GitHub Pages'"
   },
