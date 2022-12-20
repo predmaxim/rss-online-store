@@ -9,11 +9,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const aliases = {
-  Base: join(__dirname, 'src/components/base/'),
-  Footer: join(__dirname, 'src/components/footer/'),
-  Header: join(__dirname, 'src/components/header/'),
-  Home: join(__dirname, 'src/pages/home/'),
-  Shop: join(__dirname, 'src/pages/shop/'),
+  Src: join(__dirname, 'src'),
+  Base: join(__dirname, 'src/components/base'),
+  Footer: join(__dirname, 'src/components/footer'),
+  Header: join(__dirname, 'src/components/header'),
+  Home: join(__dirname, 'src/pages/home'),
+  Shop: join(__dirname, 'src/pages/shop'),
 };
 
 const devServer = (isDev) =>
@@ -43,7 +44,7 @@ export default ({ isDev }) => ({
   },
   output: {
     path: join(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash:8].js', // output filename of JS files
+    filename: 'assets/js/[name].[contenthash:8].js', // output filename of JS files
     clean: true,
   },
   optimization: {
