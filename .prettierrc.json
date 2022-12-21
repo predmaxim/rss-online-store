@@ -10,9 +10,31 @@
   "singleAttributePerLine": true,
   "htmlWhitespaceSensitivity": "css",
   "arrowParens": "always",
+  "recomendet/object-curly-even-spacing": [
+    2,
+    "either"
+  ],
+  "recomendet/array-bracket-even-spacing": [
+    2,
+    "either"
+  ],
+  "recomendet/computed-property-even-spacing": [
+    2,
+    "even"
+  ],
+  "recomendet/no-callback-literal": [
+    2,
+    [
+      "cb",
+      "callback"
+    ]
+  ],
   "overrides": [
     {
-      "files": ["**/*.ts", "**/*.js"],
+      "files": [
+        "**/*.ts",
+        "**/*.js"
+      ],
       "options": {
         "singleQuote": true
       }
