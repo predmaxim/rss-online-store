@@ -1,22 +1,23 @@
 .os-main {
   .os-home-section {
     transition: 0.3s;
-    padding: 200px 0 50px;
+    padding: 300px 0 50px;
+    background: url("Home/img/home-background.png") var(--body-bg);
+    background-size: cover;
+    // padding: var(--desktop-margins);
 
     @media screen and (width <=$notebook) {
-      padding: 150px 0 50px;
+      padding: 270px 0 50px;
     }
 
     @media screen and (width <=$tablet) {
-      padding: 100px 0 50px;
+      padding: 220px 0 50px;
     }
 
     @media screen and (width <=$mobile) {
-      padding: 50px 0;
+      padding: 170px 0 50px;
     }
-  }
 
-  .container {
     .home-logo {
       text-align: center;
       margin-bottom: 250px;
@@ -59,4 +60,38 @@
       // .home-down__icon {}
     }
   }
+
+  .os-about-section {
+
+
+    .container {
+      display: flex;
+      gap: 50px;
+
+      .left-column {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 50%;
+        padding: 240px 0 300px;
+
+        .os-about__h2 {
+          margin-top: 0;
+          margin-bottom: 20px;
+        }
+
+        .os-about__text {
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+      }
+
+      .right-column {
+        flex: 1 0 50%;
+        background: url("img/about-section-bg.png") no-repeat;
+        background-size: cover;
+        background-position: 0% 100%;
+      }
+    }
+  }
+
 }

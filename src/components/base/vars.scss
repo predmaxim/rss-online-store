@@ -5,28 +5,28 @@ $tablet: 940px;
 $mobile: 640px;
 
 :root {
-  --border-radius-xl: 20px;
+  --border-radius-x: 20px;
   --border-radius-l: 10px;
-  --border-radius-xs: 5px;
+  --border-radius-s: 5px;
 
-  --box-shadow-xl: 0px 4px 38px 0px rgb(0 0 0 / 25%);
+  --box-shadow-x: 0px 4px 38px 0px rgb(0 0 0 / 25%);
   --box-shadow-l: 0px 4px 38px 0px rgb(0 0 0 / 18%);
-  --box-shadow-xs: 0px 4px 38px 0px rgb(0 0 0 / 10%);
+  --box-shadow-s: 0px 4px 38px 0px rgb(0 0 0 / 10%);
 
   // TYPOGRAPHY
   --font-opensans: "Open Sans", sans-serif;
   --font-bilbo: "Bilbo Swash Caps", sans-serif;
 
   // BODY
-  --desktop-margins: 75px 0 0;
-  --notebook-margins: 40px 0 0;
-  --tablet-margins: 20px 0 0;
-  --mobile-margins: 20px 0 0;
+  --desktop-margins: 75px;
+  --notebook-margins: 40px;
+  --tablet-margins: 20px;
+  --mobile-margins: 20px;
 
-  --desktop-paddings: 0 30px;
-  --notebook-paddings: 0 25px;
-  --tablet-paddings: 0 25px;
-  --mobile-paddings: 0 20px;
+  --desktop-paddings: 30px;
+  --notebook-paddings: 25px;
+  --tablet-paddings: 25px;
+  --mobile-paddings: 20px;
 
   // HEADER SIZES
   --desktop-header-height: 50px;

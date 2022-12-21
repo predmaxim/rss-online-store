@@ -1,5 +1,4 @@
 .home-header {
-  height: var(--desktop-header-height);
   position: relative;
 }
 
@@ -7,8 +6,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: var(--desktop-header-height);
+  width: calc(100% - (var(--desktop-paddings) * 2));
+
+  @media screen and (width <=$notebook) {
+    width: calc(100% - (var(--notebook-paddings) * 2));
+  }
+
+  @media screen and (width <=$tablet) {
+    width: calc(100% - (var(--tablet-paddings) * 2));
+  }
+
+  @media screen and (width <=$mobile) {
+    width: calc(100% - (var(--mobile-paddings) * 2));
+  }
+
 
   &__left-column {
     .nav-icon {
@@ -47,7 +60,7 @@
       min-width: 200px;
       border-radius: var(--border-radius-l);
       background: var(--menu-bg);
-      box-shadow: var(--box-shadow-xs);
+      box-shadow: var(--box-shadow-s);
       transition: 0.3s;
 
       &__item {

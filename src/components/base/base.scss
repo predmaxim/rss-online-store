@@ -15,23 +15,10 @@
 }
 
 .os-body {
-  margin: var(--desktop-margins);
   font-family: var(--font-opensans);
   line-height: 1.7;
   height: 100%;
   transition: 0.3s;
-
-  @media screen and (width <=$notebook) {
-    margin: var(--notebook-margins);
-  }
-
-  @media screen and (width <=$tablet) {
-    margin: var(--tablet-margins);
-  }
-
-  @media screen and (width <=$mobile) {
-    margin: var(--mobile-margins);
-  }
 
   a {
     text-decoration: none;
@@ -41,21 +28,22 @@
 
 .container {
   max-width: $desktop;
-  padding: var(--desktop-paddings);
+  padding: 0 var(--desktop-paddings);
   margin: 0 auto;
+  position: relative;
 
   @media screen and (width <=$notebook) {
     max-width: $notebook;
-    padding: var(--notebook-paddings);
+    padding: 0 var(--notebook-paddings);
   }
 
   @media screen and (width <=$tablet) {
     max-width: $tablet;
-    padding: var(--tablet-paddings);
+    padding: 0 var(--tablet-paddings);
   }
 
   @media screen and (width <=$mobile) {
     max-width: $mobile;
-    padding: var(--mobile-paddings);
+    padding: 0 var(--mobile-paddings);
   }
 }
