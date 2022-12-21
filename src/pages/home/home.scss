@@ -2,7 +2,7 @@
   .os-home-section {
     transition: 0.3s;
     padding: 300px 0 50px;
-    background: url("Home/img/home-background.png") var(--body-bg);
+    background: url("Home/img/home-background.png") var(--light-bg);
     background-size: cover;
     // padding: var(--desktop-margins);
 
@@ -68,33 +68,33 @@
       display: flex;
       gap: 5%;
 
-      .left-column {
+      .about {
         display: flex;
         flex-direction: column;
-        flex: 1 0 40%;
+        flex: 1 0 45%;
         padding: 240px 0 300px 5%;
 
-        .os-about__h2 {
+        &__h2 {
           margin-top: 0;
           margin-bottom: 20px;
         }
 
-        .os-about__text {
+        &__text {
           margin-top: 0;
           margin-bottom: 40px;
         }
       }
 
-      .right-column {
-        flex: 1 0 80%;
+      .about-img {
+        flex: 1 0 90%;
         background: url("img/about-section-bg.png") no-repeat;
         background-size: cover;
-        background-position: left 70%;
+        background-position: left 50%;
       }
 
       @media screen and (width <=$notebook) {
 
-        .left-column {
+        .about {
           padding: 240px 0 300px;
         }
       }
@@ -103,9 +103,9 @@
         flex-direction: column-reverse;
         gap: 0;
 
-        .left-column {
+        .about {
           flex-direction: column;
-          padding: 5% 0;
+          padding: 5% 0 15%;
           text-align: center;
 
           button.secondary-btn {
@@ -113,7 +113,7 @@
           }
         }
 
-        .right-column {
+        .about-img {
           background-size: contain;
           background-position: center top;
           margin-top: 10%;
@@ -121,7 +121,109 @@
         }
       }
 
+      @media screen and (width <=$mobile) {
+        .about__text {
+          font-size: 16px;
+        }
+      }
+
     }
   }
 
+  .os-contacts-section {
+    padding: 200px 0;
+    transition: .3s;
+    background: var(--white-bg);
+
+    @media screen and (width <=$notebook) {
+      padding: 170px 0;
+    }
+
+    @media screen and (width <=$tablet) {
+      padding: 120px 0;
+    }
+
+    @media screen and (width <=$mobile) {
+      padding: 70px 0;
+    }
+
+    .container {
+      display: flex;
+      gap: 5%;
+      align-items: center;
+
+      .map {
+        flex: 1 0 50%;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .contacts {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 45%;
+
+        .contacts__h2 {
+          margin: 0 0 30px;
+        }
+
+        .contacts__address {
+          margin: 0 0 10px;
+        }
+
+        .contacts__phone {
+          margin: 0 0 30px;
+          font-weight: 700;
+          transition: .3s;
+
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+
+        .socials {
+          display: flex;
+          gap: 10px;
+
+          .logo-icon {
+            margin-right: 20px;
+          }
+        }
+
+        @media screen and (width <=$tablet) {
+          align-items: center;
+
+
+          .contacts__address,
+          .contacts__phone {
+            text-align: center;
+            font-size: 16px;
+          }
+        }
+      }
+
+      @media screen and (width <=$tablet) {
+        flex-direction: column;
+        align-items: stretch;
+
+        .contacts {
+          margin-top: 5%;
+        }
+
+
+        .socials {
+          flex-wrap: wrap;
+        }
+      }
+
+      // @media screen and (width <=$mobile) {
+      //   padding: 70px 0;
+      // }
+
+    }
+
+
+
+
+  }
 }

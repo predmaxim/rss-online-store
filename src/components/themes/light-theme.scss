@@ -1,4 +1,32 @@
 .theme-light {
+
+
+
+  // BASE
+  --light-bg: #fcfaf9;
+  --white-bg: #ffffff;
+  --text-color: #392e2a;
+  --link-color: #392e2a;
+  --header-color: #392e2a;
+  --primary-color: #eb7049;
+  --secondary-color: #554e4b;
+  --selection-hover: #fff4de;
+  --dimmed-border-placeholder: #c1b1aa;
+  --mini-cart-color: #836c63;
+
+  // HEADER
+  --header-bg: transparent;
+  --header-font-color: var(--font-color);
+
+  // FOOTER
+  --footer-bg: #292827;
+  --footer-font-color: #ffffff;
+
+  // HEADER NAV
+  --menu-bg: #ffffff;
+
+
+  // BTN
   @mixin btn($bg, $hover-bg, $fsize, $padding, $full: false) {
     cursor: pointer;
     background: $bg;
@@ -40,28 +68,37 @@
     @include btn(var(--primary-color), var(--secondary-color), 20, 14px 30px, true);
   }
 
-  // BASE
-  --body-bg: #fcfaf9;
-  --text-color: #392e2a;
-  --link-color: #392e2a;
-  --header-color: #392e2a;
-  --primary-color: #eb7049;
-  --secondary-color: #554e4b;
-  --selection-hover: #fff4de;
-  --dimmed-border-placeholder: #c1b1aa;
-  --mini-cart-color: #836c63;
+  .os-home-section,
+  .os-about-section {
+    background: var(--light-bg);
 
-  // HEADER
-  --header-bg: transparent;
-  --header-font-color: var(--font-color);
+  }
 
-  // FOOTER
-  --footer-bg: #292827;
-  --footer-font-color: #ffffff;
+  .os-contacts-section {
+    background: var(--white-bg);
+  }
 
-  // HEADER NAV
-  --menu-bg: #ffffff;
+  .os-footer {
+    background: var(--footer-bg);
+    color: var(--footer-font-color);
 
-  // BTN
+    .container {
 
+      .left-column {
+
+        .footer-logo-icon {}
+
+        .foote-phone {}
+
+        .footer-address {}
+      }
+
+      .right-column {
+
+        .footer-rss-logo {}
+
+        .foote-rights {}
+      }
+    }
+  }
 }

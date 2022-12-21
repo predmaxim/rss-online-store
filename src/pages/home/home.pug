@@ -8,22 +8,58 @@ html(lang="en")
     script(src=require("Src/index.ts"), defer)
     title RSS Online Shop | Home
     include Base/mixins.pug
+
   body#home.os-body.theme-light
     include HomeHeader/home-header.pug
+
     main.os-main
+
       section.os-home-section
+
         .container
+
           .home-logo
             img.home-logo__img(src=require("Img/logo.svg"), width="150" alt="logo")
             h1.home-logo__h1 WoolNor
             p.home-logo__desc 100% natural products
+
           .home-down
             p.home-down__text About Us
             img.home-down__icon(src=require("img/mouse-down.svg"), width="25" alt="Mouse down")
+
       section#about-us.os-about-section
+
         .container
-          .left-column
-            h2.os-about__h2 About Us
-            p.os-about__text We are a small farm from Norway.  We keep sheep and create warm things made with love.  We make things from wool of the sheep living on our farm, we combine traditions and new approaches in production.  The final product is of high quality, all items are checked by professionals.  In our online store you can choose what you like best and order.  or visit our farm, get to know the sheep personally and make your choice.
+
+          .about
+            h2.about__h2 About Us
+            p.about__text We are a small farm from Norway.  We keep sheep and create warm things made with love.  We make things from wool of the sheep living on our farm, we combine traditions and new approaches in production.  The final product is of high quality, all items are checked by professionals.  In our online store you can choose what you like best and order.  or visit our farm, get to know the sheep personally and make your choice.
             button.secondary-btn View our products
-          .right-column
+
+          .about-img
+
+      section#contacts.os-contacts-section
+
+        .container
+
+          .map
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d499.9222193127324!2d10.732891291794953!3d59.92071067164834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e7915f6807d%3A0xa23d54557a0937c0!2zUGlsZXN0cmVkZXQgNDUsIDAzNTAgT3Nsbywg0J3QvtGA0LLQtdCz0LjRjw!5e0!3m2!1sru!2sru!4v1671651444118!5m2!1sru!2sru" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          .contacts
+            h2.contacts__h2 Contact
+            p.contacts__address 3465, Norway,  Oslo, Pilestredet, 45
+            a(href="tel:+57-56-55-66").contacts__phone +57-56-55-66
+
+            .socials
+              a(href="#")
+                img.logo-icon(src=require("Img/logo-horizontal.svg") width="137" alt="logo")
+              a(href="#")
+                img.instagram-icon(src=require("Img/instagram-icon.svg") width="40" alt="instagram")
+              a(href="#")
+                img.facebook-icon(src=require("Img/facebook-icon.svg") width="40" alt="facebook")
+              a(href="#")
+                img.reddit-icon(src=require("Img/reddit-icon.svg") width="40" alt="reddit")
+              a(href="#")
+                img.twitter-icon(src=require("Img/twitter-icon.svg") width="40" alt="twitter")
+
+    include Footer/footer.pug
