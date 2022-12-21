@@ -40,7 +40,7 @@
 }
 
 .container {
-  max-width: var(--desktop);
+  max-width: $desktop;
   padding: var(--desktop-paddings);
   margin: 0 auto;
 
