@@ -3,7 +3,7 @@
     .home-logo {
       text-align: center;
       margin: 200px 0 250px;
-      transition: .3s;
+      transition: 0.3s;
 
       @media screen and (width <=$notebook) {
         margin: 150px 0 200px;
@@ -17,7 +17,8 @@
         margin: 50px 0 100px;
       }
 
-      .home-logo__img {}
+      .home-logo__img {
+      }
 
       .home-logo__h1 {
         font-family: var(--font-bilbo);

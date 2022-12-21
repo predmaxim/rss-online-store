@@ -1,25 +1,22 @@
 .theme-light {
-
-  @mixin btn ($bg, $hover-bg, $fz, $padding) {
-
+  @mixin btn($bg, $hover-bg, $fz, $padding) {
     cursor: pointer;
     background: $bg;
     font-size: $fz + px;
-    color: #fff;
+    color: #ffffff;
     line-height: 1.4;
     font-weight: 700;
     border-radius: 50px;
     border: none;
     outline: none;
     padding: $padding;
-    transition: .3s;
+    transition: 0.3s;
     box-shadow: var(--box-shadow-xs);
 
     &:hover {
       background: $hover-bg;
       box-shadow: none;
     }
-
   }
 
   .primary-btn {
@@ -35,15 +32,15 @@
   }
 
   // BASE
-  --body-bg: #FCFAF9;
-  --text-color: #392E2A;
-  --link-color: #392E2A;
-  --header-color: #392E2A;
-  --primary-color: #EB7049;
-  --secondary-color: #554E4B;
-  --selection-hover: #FFF4DE;
-  --dimmed-border-placeholder: #C1B1AA;
-  --mini-cart-color: #836C63;
+  --body-bg: #fcfaf9;
+  --text-color: #392e2a;
+  --link-color: #392e2a;
+  --header-color: #392e2a;
+  --primary-color: #eb7049;
+  --secondary-color: #554e4b;
+  --selection-hover: #fff4de;
+  --dimmed-border-placeholder: #c1b1aa;
+  --mini-cart-color: #836c63;
 
   // HEADER
   --header-bg: transparent;
@@ -58,6 +55,4 @@
 
   // BTN
   background: url("Home/img/home-background.png") var(--body-bg);
-
-
 }
