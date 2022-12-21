@@ -10,6 +10,7 @@ const __dirname = dirname(__filename);
 
 const aliases = {
   Src: join(__dirname, './src'),
+  Img: join(__dirname, './src/assets/img'),
   Base: join(__dirname, './src/components/base'),
   Footer: join(__dirname, './src/components/footer'),
   HomeHeader: join(__dirname, './src/components/home-header'),
