@@ -1,6 +1,9 @@
-@import 'pages/home/home';
-@import 'pages/shop/shop';
-@import 'components/base/base';
-@import 'components/home-header/home-header';
-@import 'components/shop-header/shop-header';
-@import 'components/footer/footer';
+@import "components/base/vendors";
+@import "components/base/vars";
+@import "components/themes/light-theme";
+@import "pages/home/home";
+@import "pages/shop/shop";
+@import "components/base/base";
+@import "components/home-header/home-header";
+@import "components/shop-header/shop-header";
+@import "components/footer/footer";
