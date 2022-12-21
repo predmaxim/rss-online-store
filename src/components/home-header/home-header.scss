@@ -1,5 +1,4 @@
-.container {
-}
+.container {}
 
 .home-header {
   height: var(--desktop-header-height);
@@ -104,20 +103,17 @@
         color: var(--primary-color);
 
         &::before {
-          mask: url("img/phone-icon.svg") no-repeat center;
           background-color: var(--primary-color);
         }
       }
 
-      &__icon {
-      }
+      &__icon {}
 
       &__text {
         font-weight: 700;
       }
     }
 
-    .primary-btn {
-    }
+    .primary-btn {}
   }
 }
