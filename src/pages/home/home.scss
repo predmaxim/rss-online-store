@@ -66,13 +66,13 @@
 
     .container {
       display: flex;
-      gap: 50px;
+      gap: 5%;
 
       .left-column {
         display: flex;
         flex-direction: column;
-        flex: 1 0 50%;
-        padding: 240px 0 300px;
+        flex: 1 0 40%;
+        padding: 240px 0 300px 5%;
 
         .os-about__h2 {
           margin-top: 0;
@@ -86,10 +86,10 @@
       }
 
       .right-column {
-        flex: 1 0 50%;
+        flex: 1 0 100%;
         background: url("img/about-section-bg.png") no-repeat;
         background-size: cover;
-        background-position: 0% 100%;
+        background-position: left 70%;
       }
     }
   }

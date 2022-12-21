@@ -1,8 +1,8 @@
 .theme-light {
-  @mixin btn($bg, $hover-bg, $fz, $padding) {
+  @mixin btn($bg, $hover-bg, $fsize, $padding, $full: false) {
     cursor: pointer;
     background: $bg;
-    font-size: $fz + px;
+    font-size: $fsize + px;
     color: #ffffff;
     line-height: 1.4;
     font-weight: 700;
@@ -12,6 +12,15 @@
     padding: $padding;
     transition: 0.3s;
     box-shadow: var(--box-shadow-xs);
+
+    @if $full ==true {
+      display: inline-block;
+      width: 100%;
+    }
+
+    @else {
+      width: fit-content;
+    }
 
     &:hover {
       background: $hover-bg;
@@ -28,7 +37,7 @@
   }
 
   .full-btn {
-    @include btn(var(--primary-color), var(--secondary-color), 20, 14px 30px);
+    @include btn(var(--primary-color), var(--secondary-color), 20, 14px 30px, true);
   }
 
   // BASE
