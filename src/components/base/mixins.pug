@@ -1,0 +1,24 @@
+//- Responsive img generator
+//- @param {string} img - img source
+//- @param {string} alt - img alt
+//- @param {array} defSize - img default size
+//- @param {array} sizes - img size(s)
+//- @param {boolean} placeholder - img placeholder
+//- @return {DOM Element} - IMG 'src' default size, 'srcset' - sizes in 'size' parameter
+mixin imgr(img, alt, defSize, sizes)
+  -imgSizeDefault = 320
+  -imgSizesAll = [320, 480, 640, 800, 1024, 1450, 1920]
+
+  if !defSize
+    -defSize= imgSizeDefault
+
+  if !sizes
+    -sizes= imgSizesAll
+
+  -i= ''
+  each size in sizes
+    -i= i + `sizes[]=${size},`
+
+  -imgCurSizes= i
+
+  img(src=require(`${img}?sizes[]=${defSize}`), srcset=require(`${img}?${imgCurSizes}`), alt=alt)
