@@ -1,24 +1,39 @@
 .os-main {
+  .os-home-section {
+    transition: 0.3s;
+    padding: 200px 0 50px;
+
+    @media screen and (width <=$notebook) {
+      padding: 150px 0 50px;
+    }
+
+    @media screen and (width <=$tablet) {
+      padding: 100px 0 50px;
+    }
+
+    @media screen and (width <=$mobile) {
+      padding: 50px 0;
+    }
+  }
+
   .container {
     .home-logo {
       text-align: center;
-      margin: 200px 0 250px;
-      transition: 0.3s;
+      margin-bottom: 250px;
 
       @media screen and (width <=$notebook) {
-        margin: 150px 0 200px;
+        margin-bottom: 200px;
       }
 
       @media screen and (width <=$tablet) {
-        margin: 100px 0 150px;
+        margin-bottom: 150px;
       }
 
       @media screen and (width <=$mobile) {
-        margin: 50px 0 100px;
+        margin-bottom: 100px;
       }
 
-      .home-logo__img {
-      }
+      // .home-logo__img {}
 
       .home-logo__h1 {
         font-family: var(--font-bilbo);
@@ -31,6 +46,17 @@
       .home-logo__desc {
         margin: 0;
       }
+    }
+
+    .home-down {
+      text-align: center;
+
+      .home-down__text {
+        font-weight: 700;
+        margin-top: 0;
+      }
+
+      // .home-down__icon {}
     }
   }
 }
