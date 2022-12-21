@@ -68,7 +68,7 @@ export default ({ isDev }) => ({
         generator: { filename: '[name].[contenthash:8][ext][query]' },
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg|webp|svg)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
         type: 'asset/resource',
         use: {
           loader: 'responsive-loader',
@@ -81,6 +81,10 @@ export default ({ isDev }) => ({
             // publicPath: 'assets/img/',
           },
         },
+      },
+      {
+        test: /\.svg$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.(?:woff(2)?|eot|ttf|otf)$/i,
