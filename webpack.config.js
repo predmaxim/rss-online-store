@@ -65,7 +65,7 @@ export default ({ isDev }) => ({
         use: 'ts-loader',
         exclude: /node_modules/,
         // include: '/src/**/*',
-        generator: { filename: '[name].[contenthash:8][ext][query]' },
+        generator: { filename: '[name].[contenthash:8][ext]' },
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
@@ -85,11 +85,12 @@ export default ({ isDev }) => ({
       {
         test: /\.svg$/i,
         type: 'asset/resource',
+        generator: { filename: 'assets/img/[name][ext]' },
       },
       {
         test: /\.(?:woff(2)?|eot|ttf|otf)$/i,
         type: 'asset/inline',
-        generator: { filename: 'assets/fonts/[name][ext][query]' },
+        generator: { filename: 'assets/fonts/[name][ext]' },
       },
       {
         test: /\.s[ac]ss$/i,
