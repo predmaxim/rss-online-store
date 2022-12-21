@@ -11,7 +11,7 @@
     "fixlint": "npx eslint --fix \"**/*.ts\" && npx prettier --write src/ && npx stylelint --fix \"**/*.scss\"",
     "prettier": "prettier --write src/",
     "stylelint": "npx stylelint  --fix \"**/*.scss\"",
-    "predeploy": "npm run fixlint && npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -e rss-online-store/ --message 'Deploy to GitHub Pages'"
   },
   "repository": {
