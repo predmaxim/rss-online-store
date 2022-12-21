@@ -1,0 +1,35 @@
+.os-main {
+  .container {
+    .home-logo {
+      text-align: center;
+      margin: 200px 0 250px;
+      transition: .3s;
+
+      @media screen and (width <=$notebook) {
+        margin: 150px 0 200px;
+      }
+
+      @media screen and (width <=$tablet) {
+        margin: 100px 0 150px;
+      }
+
+      @media screen and (width <=$mobile) {
+        margin: 50px 0 100px;
+      }
+
+      .home-logo__img {}
+
+      .home-logo__h1 {
+        font-family: var(--font-bilbo);
+        font-size: 90px;
+        font-weight: 100;
+        line-height: 1;
+        margin: 10px 0 0;
+      }
+
+      .home-logo__desc {
+        margin: 0;
+      }
+    }
+  }
+}
