@@ -8,7 +8,7 @@ html(lang="en")
     script(src=require("Src/index.ts"), defer)
     title RSS Online Shop | Home
     include Base/mixins.pug
-  body.os-body.theme-light
+  body#home.os-body.theme-light
     include HomeHeader/home-header.pug
     main.os-main
       section.os-home-section
@@ -20,7 +20,7 @@ html(lang="en")
           .home-down
             p.home-down__text About Us
             img.home-down__icon(src=require("img/mouse-down.svg"), width="25" alt="Mouse down")
-      section.os-about-section
+      section#about-us.os-about-section
         .container
           .left-column
             h2.os-about__h2 About Us
