@@ -1,7 +1,4 @@
 .theme-light {
-
-
-
   // BASE
   --light-bg: #fcfaf9;
   --white-bg: #ffffff;
@@ -25,7 +22,6 @@
   // HEADER NAV
   --menu-bg: #ffffff;
 
-
   // BTN
   @mixin btn($bg, $hover-bg, $fsize, $padding, $full: false) {
     cursor: pointer;
@@ -44,9 +40,7 @@
     @if $full ==true {
       display: inline-block;
       width: 100%;
-    }
-
-    @else {
+    } @else {
       width: fit-content;
     }
 
@@ -71,7 +65,6 @@
   .os-home-section,
   .os-about-section {
     background: var(--light-bg);
-
   }
 
   .os-contacts-section {
@@ -83,21 +76,23 @@
     color: var(--footer-font-color);
 
     .container {
-
       .left-column {
+        .footer-logo-icon {
+        }
 
-        .footer-logo-icon {}
+        .foote-phone {
+        }
 
-        .foote-phone {}
-
-        .footer-address {}
+        .footer-address {
+        }
       }
 
       .right-column {
+        .footer-rss-logo {
+        }
 
-        .footer-rss-logo {}
-
-        .foote-rights {}
+        .foote-rights {
+        }
       }
     }
   }

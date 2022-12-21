@@ -15,11 +15,10 @@
     .footer-phone,
     .footer-rights {
       font-size: 16px;
-      transition: .3s;
+      transition: 0.3s;
     }
 
     .footer-left-column {
-
       .footer-logo-icon {
         filter: brightness(10);
         margin-bottom: 40px;
@@ -28,7 +27,6 @@
       .footer-phone {
         margin-bottom: 15px;
       }
-
     }
 
     .footer-right-column {
@@ -43,7 +41,6 @@
         margin: 0;
       }
     }
-
 
     .footer-phone:hover,
     .footer-address:hover {
@@ -62,14 +59,6 @@
       .footer-right-column {
         margin-top: 10%;
       }
-
     }
-
-
-
-
-
-
-
   }
 }

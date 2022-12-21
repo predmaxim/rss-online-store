@@ -62,8 +62,6 @@
   }
 
   .os-about-section {
-
-
     .container {
       display: flex;
       gap: 5%;
@@ -93,7 +91,6 @@
       }
 
       @media screen and (width <=$notebook) {
-
         .about {
           padding: 240px 0 300px;
         }
@@ -126,13 +123,12 @@
           font-size: 16px;
         }
       }
-
     }
   }
 
   .os-contacts-section {
     padding: 200px 0;
-    transition: .3s;
+    transition: 0.3s;
     background: var(--white-bg);
 
     @media screen and (width <=$notebook) {
@@ -174,7 +170,7 @@
         .contacts__phone {
           margin: 0 0 30px;
           font-weight: 700;
-          transition: .3s;
+          transition: 0.3s;
 
           &:hover {
             color: var(--primary-color);
@@ -193,7 +189,6 @@
         @media screen and (width <=$tablet) {
           align-items: center;
 
-
           .contacts__address,
           .contacts__phone {
             text-align: center;
@@ -210,7 +205,6 @@
           margin-top: 5%;
         }
 
-
         .socials {
           flex-wrap: wrap;
         }
@@ -219,11 +213,6 @@
       // @media screen and (width <=$mobile) {
       //   padding: 70px 0;
       // }
-
     }
-
-
-
-
   }
 }
