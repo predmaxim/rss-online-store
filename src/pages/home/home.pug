@@ -11,10 +11,14 @@ html(lang="en")
   body.os-body.theme-light
     include HomeHeader/home-header.pug
     main.os-main
-      .container
-        .home-logo
-          img.home-logo__img(src=require("Img/logo.svg"), alt="logo")
-          h1.home-logo__h1 WoolNor
-          p.home-logo__desc 100% natural products
+      section.os-home-section
+        .container
+          .home-logo
+            img.home-logo__img(src=require("Img/logo.svg"), width="150" alt="logo")
+            h1.home-logo__h1 WoolNor
+            p.home-logo__desc 100% natural products
+          .home-down
+            p.home-down__text About Us
+            img.home-down__icon(src=require("img/mouse-down.svg"), width="25" alt="Mouse down")
 
 
