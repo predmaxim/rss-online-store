@@ -4,12 +4,13 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href=require("Src/style.scss"))
+    link(rel="icon" type="image/png" href=require('Img/favicon.png'))
+    link(rel="stylesheet" href=require("Src/style.scss"))
     script(src=require("Src/index.ts"), defer)
     title RSS Online Shop | Home
-    include Base/mixins.pug
 
   body#home.os-body.theme-light
+
     include HomeHeader/home-header.pug
 
     main.os-main
@@ -34,7 +35,7 @@ html(lang="en")
           .about
             h2.about__h2 About Us
             p.about__text We are a small farm from Norway.  We keep sheep and create warm things made with love.  We make things from wool of the sheep living on our farm, we combine traditions and new approaches in production.  The final product is of high quality, all items are checked by professionals.  In our online store you can choose what you like best and order.  or visit our farm, get to know the sheep personally and make your choice.
-            button.secondary-btn View our products
+            button.secondary-btn(onclick="window.location.href='shop.html'") View our products
 
           .about-img
 
@@ -48,7 +49,7 @@ html(lang="en")
           .contacts
             h2.contacts__h2 Contact
             p.contacts__address 3465, Norway,  Oslo, Pilestredet, 45
-            a(href="tel:+57-56-55-66").contacts__phone +57-56-55-66
+            a.contacts__phone(href="tel:+57-56-55-66") +57-56-55-66
 
             .socials
               a(href="#")
