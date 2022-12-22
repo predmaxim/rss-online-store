@@ -29,10 +29,20 @@ $mobile: 640px;
   --mobile-paddings: 20px;
 
   // HEADER SIZES
-  --desktop-header-height: 50px;
-  --notebook-header-height: 50px;
-  --tablet-header-height: 40px;
-  --mobile-header-height: 30px;
+  --desktop-header-top-margin: 50px;
+  --notebook-header-top-margin: 50px;
+  --tablet-header-top-margin: 40px;
+  --mobile-header-top-margin: 30px;
+
+  --desktop-home-header-height: 50px;
+  --notebook-home-header-height: 50px;
+  --tablet-home-header-height: 40px;
+  --mobile-home-header-height: 30px;
+
+  --desktop-header-height: 147px;
+  --notebook-header-height: 130px;
+  --tablet-header-height: 100px;
+  --mobile-header-height: 70px;
 
   // NAV
   --desktop-nav-font-size: 18px;
