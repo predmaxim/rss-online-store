@@ -102,6 +102,7 @@
 
       .header-phone {
         transition: 0.3s;
+        position: relative;
 
         @media screen and (width <=$mobile) {
           display: none;
@@ -114,7 +115,8 @@
           position: absolute;
           width: 24px;
           height: 24px;
-          margin-left: -40px;
+          bottom: 5px;
+          left: -40px;
           transition: 0.3s;
         }
 
