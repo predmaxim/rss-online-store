@@ -2,9 +2,11 @@
 @use "Base/vars";
 @use "Base/mixins";
 @use "Base/base";
+@use "Base/buttons";
 @use "Themes/light-theme";
 @use "HomeHeader/home-header";
 @use "ShopHeader/shop-header";
+@use "MiniCart/mini-cart";
 @use "Footer/footer";
 @use "Home/home";
 @use "Shop/shop";

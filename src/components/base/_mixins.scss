@@ -1,17 +1,16 @@
 // BUTTONS
-@mixin btn($bg, $hover-bg, $fsize, $padding, $full: false) {
+@mixin btn($bg, $hover-bg, $fsize: 16px, $padding: 14px 30px, $border-r: 50px, $full: false) {
   cursor: pointer;
   background: $bg;
-  font-size: $fsize + px;
-  color: #ffffff;
+  font-size: $fsize;
+  color: var(--text-color-alt);
   line-height: 1.4;
   font-weight: 700;
-  border-radius: 50px;
   border: none;
   outline: none;
   padding: $padding;
-  transition: 0.3s;
   box-shadow: var(--box-shadow-xs);
+  transition: 0.3s;
 
   @if $full ==true {
     display: inline-block;
@@ -20,6 +19,18 @@
 
   @else {
     width: fit-content;
+  }
+
+  @if $border-r {
+    border-radius: $border-r;
+  }
+
+  @if $padding {
+    padding: $padding;
+  }
+
+  @if $fsize {
+    font-size: $fsize;
   }
 
   &:hover {
