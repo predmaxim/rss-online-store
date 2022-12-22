@@ -1,10 +1,48 @@
+@import "Base/vars";
+@import "Base/mixins";
+
+// .mini-cart-btn {
+//   @include btn(var(--mini-cart-color), var(--secondary-color), $padding: 23px, $border-r: 50%);
+//   box-shadow: 0px 4px 7px 2px rgba(0 0 0 / 10%);
+
+//   &::before {
+//     content: " ";
+//     background: url("img/cart-icon.svg");
+//   }
+// }
+
 .mini-cart {
-  .mini-cart__btn {
-    background: var(--mini-cart-color);
+  position: relative;
+
+  &__btn {
+
+    &::before {
+      content: " ";
+      background: url("img/cart-icon.svg") no-repeat;
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
   }
 
-  .mini-cart__qty-in-cart-badge {
+  &__qty-in-cart-badge {
     background: var(--primary-color);
+    color: var(--text-color-alt);
+    font-size: 10px;
+    text-align: center;
+    line-height: 1;
+    font-weight: 700;
+    margin: 0;
+    padding: 5px 0;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
   }
 }
