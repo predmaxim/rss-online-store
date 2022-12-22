@@ -22,17 +22,7 @@
       text-align: center;
       margin-bottom: 250px;
 
-      @media screen and (width <=$notebook) {
-        margin-bottom: 200px;
-      }
 
-      @media screen and (width <=$tablet) {
-        margin-bottom: 150px;
-      }
-
-      @media screen and (width <=$mobile) {
-        margin-bottom: 100px;
-      }
 
       // .home-logo__img {}
 
@@ -46,6 +36,26 @@
 
       .home-logo__desc {
         margin: 0;
+      }
+
+      @media screen and (width <=$notebook) {
+        margin-bottom: 200px;
+      }
+
+      @media screen and (width <=$tablet) {
+        margin-bottom: 150px;
+      }
+
+      @media screen and (width <=$mobile) {
+        margin-bottom: 100px;
+
+        .home-logo__h1 {
+          font-size: 70px;
+        }
+
+        .home-logo__img {
+          width: 130px;
+        }
       }
     }
 
