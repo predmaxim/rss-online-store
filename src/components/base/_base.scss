@@ -11,26 +11,31 @@
   z-index: -1;
 }
 
-h1,
-h2,
-h3 {
+.os-h1,
+.os-h2,
+.os-h3 {
   font-weight: 500;
 }
 
-h1 {
+.os-h1 {
   font-size: 50px;
 }
 
-h2 {
+.os-h2 {
   font-size: 40px;
 }
 
-h3 {
+.os-h3 {
   font-size: 30px;
 }
 
-p,
+p {
+  font-size: 20px;
+}
+
 a {
+  text-decoration: none;
+  color: inherit;
   font-size: 20px;
 }
 
@@ -44,11 +49,6 @@ a {
   line-height: 1.7;
   height: 100%;
   transition: 0.3s;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
 }
 
 .container {
