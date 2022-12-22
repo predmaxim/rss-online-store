@@ -1,30 +1,35 @@
-.home-header {
+@import "Base/vars";
+@import "Base/mixins";
+
+.shop-header {
   position: absolute;
   top: var(--desktop-header-top-margin);
-  height: var(--desktop-home-header-height);
+  height: var(--desktop-header-height);
   width: 100%;
 
   @media screen and (width <=$notebook) {
     top: var(--notebook-header-top-margin);
-    height: var(--notebook-home-header-height);
+    height: var(--notebook-header-height);
   }
 
   @media screen and (width <=$tablet) {
     top: var(--tablet-header-top-margin);
-    height: var(--tablet-home-header-height);
+    height: var(--tablet-header-height);
   }
 
   @media screen and (width <=$mobile) {
     top: var(--mobile-header-top-margin);
-    height: var(--mobile-home-header-height);
+    height: var(--mobile-header-height);
   }
 
   .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     .left-column {
+      width: 33.33%;
+
       .nav {
 
         .nav-icon {
@@ -92,10 +97,36 @@
       }
     }
 
+    .center-column {
+      width: 33.33%;
+      text-align: center;
+
+      .header-logo {
+
+        transition: .3s;
+        width: var(--desktop-header-height);
+
+        @media screen and (width <=$notebook) {
+          width: var(--notebook-header-height);
+        }
+
+        @media screen and (width <=$tablet) {
+          width: var(--tablet-header-height);
+        }
+
+        @media screen and (width <=$mobile) {
+          width: var(--mobile-header-height);
+        }
+
+      }
+    }
+
     .right-column {
       display: flex;
       gap: 40px;
       align-items: center;
+      width: 33.33%;
+      justify-content: flex-end;
 
       .header-phone {
         transition: 0.3s;

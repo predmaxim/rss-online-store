@@ -1,3 +1,6 @@
+@import "Base/vars";
+@import "Base/mixins";
+
 .theme-light {
   // BASE
   --primary-color: #eb7049;
@@ -21,32 +24,6 @@
   --menu-bg: #ffffff;
 
   // BTN
-  @mixin btn($bg, $hover-bg, $fsize, $padding, $full: false) {
-    cursor: pointer;
-    background: $bg;
-    font-size: $fsize + px;
-    color: #ffffff;
-    line-height: 1.4;
-    font-weight: 700;
-    border-radius: 50px;
-    border: none;
-    outline: none;
-    padding: $padding;
-    transition: 0.3s;
-    box-shadow: var(--box-shadow-xs);
-
-    @if $full ==true {
-      display: inline-block;
-      width: 100%;
-    } @else {
-      width: fit-content;
-    }
-
-    &:hover {
-      background: $hover-bg;
-      box-shadow: none;
-    }
-  }
 
   color: var(--text-color);
 

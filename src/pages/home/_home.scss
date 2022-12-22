@@ -1,3 +1,6 @@
+@import "Base/vars";
+@import "Base/mixins";
+
 .os-main {
   .os-home-section {
     transition: 0.3s;
@@ -30,6 +33,7 @@
         font-weight: 100;
         line-height: 1;
         margin: 10px 0 0;
+        transition: .3s;
       }
 
       .home-logo__desc {
@@ -79,6 +83,8 @@
         flex-direction: column;
         flex: 1 0 45%;
         padding: 240px 0 300px 5%;
+        transition: .3s;
+
 
         &__h2 {
           margin-top: 0;
@@ -96,6 +102,8 @@
         background: url("img/about-section-bg.png") no-repeat;
         background-size: cover;
         background-position: left 50%;
+        transition: .3s;
+
       }
 
       @media screen and (width <=$notebook) {
@@ -160,12 +168,16 @@
         flex: 1 0 50%;
         border-radius: 20px;
         overflow: hidden;
+        transition: .3s;
+
       }
 
       .contacts {
         display: flex;
         flex-direction: column;
         flex: 1 0 45%;
+        transition: .3s;
+
 
         .contacts__h2 {
           margin: 0 0 30px;

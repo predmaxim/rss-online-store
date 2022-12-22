@@ -1,3 +1,6 @@
+@import "Base/vars";
+@import "Base/mixins";
+
 .os-404-section {
   padding: calc(70px + var(--desktop-header-height) + var(--desktop-header-top-margin)) 0 250px;
   transition: .3s;
