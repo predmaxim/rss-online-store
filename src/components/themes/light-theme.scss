@@ -38,9 +38,7 @@
     @if $full ==true {
       display: inline-block;
       width: 100%;
-    }
-
-    @else {
+    } @else {
       width: fit-content;
     }
 
@@ -51,7 +49,6 @@
   }
 
   color: var(--text-color);
-
 
   .primary-btn {
     @include btn(var(--primary-color), var(--secondary-color), 16, 14px 30px);
