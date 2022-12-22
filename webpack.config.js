@@ -17,6 +17,7 @@ const aliases = {
   Footer: join(__dirname, './src/components/footer'),
   HomeHeader: join(__dirname, './src/components/home-header'),
   ShopHeader: join(__dirname, './src/components/shop-header'),
+  MiniCart: join(__dirname, './src/components/mini-cart/'),
   Themes: join(__dirname, './src/components/themes'),
   Home: join(__dirname, './src/pages/home'),
   Shop: join(__dirname, './src/pages/shop'),
