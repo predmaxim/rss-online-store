@@ -1,130 +1,136 @@
 .home-header {
-  position: relative;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: absolute;
-  top: var(--desktop-header-height);
-  width: calc(100% - (var(--desktop-paddings) * 2));
+  top: var(--desktop-header-top-margin);
+  height: var(--desktop-home-header-height);
+  width: 100%;
 
   @media screen and (width <=$notebook) {
-    width: calc(100% - (var(--notebook-paddings) * 2));
+    top: var(--notebook-header-top-margin);
+    height: var(--notebook-home-header-height);
   }
 
   @media screen and (width <=$tablet) {
-    width: calc(100% - (var(--tablet-paddings) * 2));
+    top: var(--tablet-header-top-margin);
+    height: var(--tablet-home-header-height);
   }
 
   @media screen and (width <=$mobile) {
-    width: calc(100% - (var(--mobile-paddings) * 2));
+    top: var(--mobile-header-top-margin);
+    height: var(--mobile-home-header-height);
   }
 
-  &__left-column {
-    .nav-icon {
-      cursor: pointer;
-      width: 30px;
-      height: 30px;
-      transition: 0.3s;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-      &.active::before {
-        mask: url("img/nav-icon-close.svg") no-repeat center;
-        background-color: var(--primary-color);
+    .left-column {
+      .nav {
+
+        .nav-icon {
+          cursor: pointer;
+          width: 30px;
+          height: 30px;
+          transition: 0.3s;
+
+          &.active::before {
+            mask: url("img/nav-icon-close.svg") no-repeat center;
+            background-color: var(--primary-color);
+          }
+
+          &::before {
+            transition: 0.3s;
+            content: " ";
+            mask: url("img/nav-icon-open.svg") no-repeat center;
+            background-color: var(--text-color);
+            position: absolute;
+            width: 30px;
+            height: 30px;
+          }
+
+          &:hover::before {
+            background-color: var(--primary-color);
+          }
+        }
       }
 
-      &::before {
-        transition: 0.3s;
-        content: " ";
-        mask: url("img/nav-icon-open.svg") no-repeat center;
-        background-color: var(--text-color);
+      .menu {
+        display: flex;
+        flex-direction: column;
         position: absolute;
-        width: 30px;
-        height: 30px;
-      }
+        font-weight: 700;
+        margin-top: 20px;
+        padding: 40px 30px;
+        min-width: 200px;
+        border-radius: var(--border-radius-l);
+        background: var(--menu-bg);
+        box-shadow: var(--box-shadow-s);
+        transition: 0.3s;
+        z-index: 10;
 
-      &:hover::before {
-        background-color: var(--primary-color);
+        &__item {
+          font-size: var(--desktop-nav-font-size);
+          margin-bottom: 10px;
+          transition: 0.3s;
+
+          &:hover {
+            color: var(--primary-color);
+          }
+
+          @media screen and (width <=$notebook) {
+            font-size: var(--notebook-nav-font-size);
+          }
+
+          @media screen and (width <=$tablet) {
+            font-size: var(--tablet-nav-font-size);
+          }
+
+          @media screen and (width <=$mobile) {
+            font-size: var(--mobile-nav-font-size);
+          }
+        }
       }
     }
 
-    .menu {
+    .right-column {
       display: flex;
-      flex-direction: column;
-      position: absolute;
-      font-weight: 700;
-      margin-top: 20px;
-      padding: 40px 30px;
-      min-width: 200px;
-      border-radius: var(--border-radius-l);
-      background: var(--menu-bg);
-      box-shadow: var(--box-shadow-s);
-      transition: 0.3s;
-      z-index: 10;
+      gap: 40px;
+      align-items: center;
 
-      &__item {
-        font-size: var(--desktop-nav-font-size);
-        margin-bottom: 10px;
+      .header-phone {
         transition: 0.3s;
+
+        @media screen and (width <=$mobile) {
+          display: none;
+        }
+
+        &::before {
+          content: " ";
+          mask: url("img/phone-icon.svg") no-repeat center;
+          background-color: #48794d;
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          margin-left: -40px;
+          transition: 0.3s;
+        }
 
         &:hover {
           color: var(--primary-color);
+
+          &::before {
+            background-color: var(--primary-color);
+          }
         }
 
-        @media screen and (width <=$notebook) {
-          font-size: var(--notebook-nav-font-size);
-        }
+        // &__icon {}
 
-        @media screen and (width <=$tablet) {
-          font-size: var(--tablet-nav-font-size);
-        }
-
-        @media screen and (width <=$mobile) {
-          font-size: var(--mobile-nav-font-size);
+        &__text {
+          font-weight: 700;
         }
       }
+
+      // .primary-btn {}
     }
-  }
-
-  &__right-column {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-
-    .header-phone {
-      transition: 0.3s;
-
-      @media screen and (width <=$mobile) {
-        display: none;
-      }
-
-      &::before {
-        content: " ";
-        mask: url("img/phone-icon.svg") no-repeat center;
-        background-color: #48794d;
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        margin-left: -40px;
-        transition: 0.3s;
-      }
-
-      &:hover {
-        color: var(--primary-color);
-
-        &::before {
-          background-color: var(--primary-color);
-        }
-      }
-
-      // &__icon {}
-
-      &__text {
-        font-weight: 700;
-      }
-    }
-
-    // .primary-btn {}
   }
 }
