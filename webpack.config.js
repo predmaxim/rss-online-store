@@ -1,12 +1,14 @@
 // import path, { join } from 'path';
-import PugPlugin, { loader as _loader } from 'pug-plugin';
+// import CopyWebpackPlugin from 'copy-webpack-plugin';
+import PugPlugin, { loader as pugLoader } from 'pug-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+const pages = ['home', 'shop', '404'];
 
 const aliases = {
   Src: join(__dirname, './src'),
@@ -15,8 +17,10 @@ const aliases = {
   Footer: join(__dirname, './src/components/footer'),
   HomeHeader: join(__dirname, './src/components/home-header'),
   ShopHeader: join(__dirname, './src/components/shop-header'),
+  Themes: join(__dirname, './src/components/themes'),
   Home: join(__dirname, './src/pages/home'),
   Shop: join(__dirname, './src/pages/shop'),
+  404: join(__dirname, './src/pages/404'),
 };
 
 const devServer = (isDev) =>
@@ -24,33 +28,31 @@ const devServer = (isDev) =>
     ? {
         devServer: {
           open: false,
-          hot: true,
+          hot: false,
           port: 9000,
-          compress: false,
-          // watchFiles: {
-          //   paths: ['src/**/*.*'],
-          //   options: { usePolling: true },
-          // },
-          static: { directory: join(__dirname, 'src') },
+          // historyApiFallback: true,
         },
-        // stats: 'errors-only'
+        stats: 'errors-only',
       }
     : {};
 
 export default ({ isDev }) => ({
   mode: isDev ? 'development' : 'production',
   devtool: isDev ? 'inline-source-map' : 'source-map',
-  entry: {
-    index: './src/pages/home/home.pug',
-    shop: './src/pages/shop/shop.pug',
-  },
+  entry: pages.reduce((config, page) => {
+    page === 'home'
+      ? (config['index'] = `./src/pages/${page}/${page}.pug`)
+      : (config[page] = `./src/pages/${page}/${page}.pug`);
+    return config;
+  }, {}),
   output: {
-    path: join(__dirname, 'dist'),
+    path: join(__dirname, 'dist/'),
+    publicPath: '/',
     filename: 'assets/js/[name].[contenthash:8].js', // output filename of JS files
     clean: true,
   },
   optimization: {
-    splitChunks: { chunks: 'all' },
+    // splitChunks: { chunks: 'all' },
     minimize: !isDev,
   },
   resolve: { alias: aliases, extensions: ['.ts', '.js'] },
@@ -58,7 +60,7 @@ export default ({ isDev }) => ({
     rules: [
       {
         test: /\.pug$/,
-        loader: _loader,
+        loader: pugLoader,
       },
       {
         test: /\.ts$/i,
@@ -87,13 +89,13 @@ export default ({ isDev }) => ({
         type: 'asset/resource',
         generator: { filename: 'assets/img/[name][ext]' },
       },
+      // {
+      //   test: /\.(?:woff(2)?|eot|ttf|otf)$/i,
+      //   type: 'asset/inline',
+      //   generator: { filename: 'assets/fonts/[name][ext]' },
+      // },
       {
-        test: /\.(?:woff(2)?|eot|ttf|otf)$/i,
-        type: 'asset/inline',
-        generator: { filename: 'assets/fonts/[name][ext]' },
-      },
-      {
-        test: /\.s[ac]ss$/i,
+        test: /\.(css|sass|scss)$/i,
         use: [
           'css-loader',
           'postcss-loader',
@@ -110,17 +112,17 @@ export default ({ isDev }) => ({
   plugins: [
     new CompressionPlugin({ test: /\.(js|png|jpg|svg|html|css)(\?.*)?$/i }),
     new PugPlugin({
-      pretty: isDev,
+      pretty: true,
       extractCss: { filename: 'assets/css/[name].[contenthash:8].css' },
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: join(__dirname, 'src/favicon.ico'),
-          to: './',
-        },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: join(__dirname, 'src/favicon.ico'),
+    //       to: './',
+    //     },
+    //   ],
+    // }),
   ],
   ...devServer(isDev),
 });
