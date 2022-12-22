@@ -1,6 +1,20 @@
 .os-404-section {
+  padding: calc(70px + var(--desktop-header-height) + var(--desktop-header-top-margin)) 0 250px;
+  transition: .3s;
+
+  @media screen and (width <=$notebook) {
+    padding: calc(70px + var(--notebook-header-height) + var(--notebook-header-top-margin)) 0 250px;
+  }
+
+  @media screen and (width <=$tablet) {
+    padding: calc(70px + var(--tablet-header-height) + var(--tablet-header-top-margin)) 0 250px;
+  }
+
+  @media screen and (width <=$mobile) {
+    padding: calc(70px + var(--mobile-header-height) + var(--mobile-header-top-margin)) 0 250px;
+  }
+
   .container {
-    padding: 70px 0 250px;
     text-align: center;
 
     // .sad-emoticon {}
