@@ -1,6 +1,3 @@
-@import "Base/vars";
-@import "Base/mixins";
-
 .theme-light {
   // BASE
   --primary-color: #eb7049;
@@ -23,22 +20,9 @@
   --header-font-color: var(--font-color);
   --menu-bg: #ffffff;
 
-  // BTN
-
   color: var(--text-color);
 
-  .primary-btn {
-    @include btn(var(--primary-color), var(--secondary-color), 16, 14px 30px);
-  }
-
-  .secondary-btn {
-    @include btn(var(--secondary-color), var(--primary-color), 16, 14px 30px);
-  }
-
-  .full-btn {
-    @include btn(var(--primary-color), var(--secondary-color), 20, 14px 30px, true);
-  }
-
+  // SECTIONS
   .os-home-section,
   .os-about-section {
     background: var(--light-bg);
