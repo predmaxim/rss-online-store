@@ -2,19 +2,19 @@
 @import "Base/mixins";
 
 .os-404-section {
-  padding: calc(70px + var(--desktop-header-height) + var(--desktop-header-top-margin)) 0 250px;
+  padding: var(--desktop-header-height) 0 calc(var(--desktop-header-height) * 1.5);
   transition: .3s;
 
   @media screen and (width <=$notebook) {
-    padding: calc(70px + var(--notebook-header-height) + var(--notebook-header-top-margin)) 0 250px;
+    padding: var(--notebook-header-height) 0 calc(var(--desktop-header-height) * 1.5);
   }
 
   @media screen and (width <=$tablet) {
-    padding: calc(70px + var(--tablet-header-height) + var(--tablet-header-top-margin)) 0 250px;
+    padding: var(--tablet-header-height) 0 calc(var(--desktop-header-height) * 1.5);
   }
 
   @media screen and (width <=$mobile) {
-    padding: calc(70px + var(--mobile-header-height) + var(--mobile-header-top-margin)) 0 250px;
+    padding: var(--mobile-header-height) 0 calc(var(--desktop-header-height) * 1.5);
   }
 
   .container {
