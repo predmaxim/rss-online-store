@@ -2,10 +2,7 @@
 @import "Base/mixins";
 
 .shop-header {
-  position: absolute;
-  top: var(--desktop-header-top-margin);
-  height: var(--desktop-header-height);
-  width: 100%;
+  margin-top: var(--desktop-header-top-margin);
 
   @media screen and (width <=$notebook) {
     top: var(--notebook-header-top-margin);
@@ -160,6 +157,10 @@
 
         &__text {
           font-weight: 700;
+        }
+
+        @media screen and (width <=$tablet) {
+          display: none;
         }
       }
 
