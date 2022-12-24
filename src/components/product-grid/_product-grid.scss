@@ -1,0 +1,130 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 24%));
+  gap: 15px;
+  transition: .3s;
+
+
+  .article {
+    padding: 25px;
+    display: grid;
+    grid-template-areas:
+      "img img img"
+      "header header header"
+      "desc desc desc"
+      "btn btn price";
+    border-radius: 20px;
+    transition: .3s;
+
+    .article__img {
+      cursor: pointer;
+      grid-area: img;
+
+      .product-featured-img {
+        border-radius: 20px;
+        width: auto;
+        height: 100%;
+      }
+
+      margin-bottom: 20px;
+    }
+
+    .article__header {
+      grid-area: header;
+      font-weight: 700;
+      // margin-bottom: 5px;
+    }
+
+    .article__description {
+      grid-area: desc;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .article__btn.add-to-cart-btn {
+      grid-area: btn;
+    }
+
+    .article__price {
+      grid-area: price;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    // .price-currency {}
+  }
+
+  @media screen and (width <=$tablet) {
+    justify-content: space-around;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 24%));
+    gap: 30px 15px;
+  }
+
+  @media screen and (width <=$mobile) {
+    justify-content: center;
+    // grid-template-columns: 1fr;
+
+    gap: 30px 0px;
+
+    .article {
+      padding: 15px;
+    }
+  }
+}
+
+.products-list {
+  display: grid;
+  gap: 15px;
+  transition: 0.3s;
+  grid-template-columns: 1fr;
+  // grid-template-columns: repeat(auto-fit, minmax(500px, 49%));
+
+
+  .article {
+    padding: 25px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(150px, 30%) 1fr 150px;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-areas:
+      "img header header"
+      "img desc desc"
+      "img price btn";
+    gap: 10px 20px;
+    border-radius: 20px;
+    transition: .3s;
+
+    .article__img {
+      cursor: pointer;
+      grid-area: img;
+
+      .product-featured-img {
+        border-radius: 20px;
+        width: 100%;
+        height: auto;
+      }
+
+    }
+
+    .article__header {
+      grid-area: header;
+      font-weight: 700;
+    }
+
+    .article__description {
+      grid-area: desc;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .article__btn.add-to-cart-btn {
+      grid-area: btn;
+    }
+
+    .article__price {
+      grid-area: price;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+}
