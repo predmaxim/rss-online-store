@@ -1,6 +1,3 @@
-@import "Base/vars";
-@import "Base/mixins";
-
 .home-header {
   position: absolute;
   top: var(--desktop-header-top-margin);
@@ -37,22 +34,22 @@
           transition: 0.3s;
 
           &.active::before {
-            mask: url("img/nav-icon-close.svg") no-repeat center;
-            background-color: var(--primary-color);
+            mask: url("Img/close-icon.svg") no-repeat center;
+            // background-color: var(--primary-color);
           }
 
           &::before {
             transition: 0.3s;
             content: " ";
-            mask: url("img/nav-icon-open.svg") no-repeat center;
-            background-color: var(--text-color);
+            mask: url("img/nav-icon.svg") no-repeat center;
+            // background-color: var(--text-color);
             position: absolute;
             width: 30px;
             height: 30px;
           }
 
           &:hover::before {
-            background-color: var(--primary-color);
+            // background-color: var(--primary-color);
           }
         }
       }

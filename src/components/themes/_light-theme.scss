@@ -9,18 +9,90 @@
   --text-color-alt: #ffffff;
   --link-color: #392e2a;
   --link-color-alt: #ffffff;
-  --link-color-hover: var(--primary-color);
-  --header-color: #392e2a;
+  --link-color-hover: #eb7049;
+  --headers-color: #392e2a;
   --selection-hover: #fff4de;
   --dimmed-border-placeholder: #c1b1aa;
   --mini-cart-color: #836c63;
 
+  --box-shadow-x: 0px 4px 38px -10px rgb(0 0 0 / 25%);
+  --box-shadow-l: 0px 4px 38px -10px rgb(0 0 0 / 18%);
+  --box-shadow-s: 0px 4px 38px -10px rgba(0 0 0 / 10%);
+  --box-shadow-xs: 0px 4px 7px 2px rgba(0 0 0 / 10%);
+
   // HEADER
   --header-bg: transparent;
-  --header-font-color: var(--font-color);
+  --header-font-color: #392e2a;
   --menu-bg: #ffffff;
 
   color: var(--text-color);
+
+  .nav-icon {
+
+    &.active::before {
+      background-color: var(--primary-color);
+    }
+
+    &::before {
+      background-color: var(--text-color);
+    }
+
+    &:hover::before {
+      background-color: var(--primary-color);
+    }
+  }
+
+  .view {
+
+    &__list,
+    &__grid {
+
+      .view-icon {
+
+        &::before {
+          background-color: var(--dimmed-border-placeholder);
+        }
+      }
+
+      &:hover,
+      &.active {
+        background: var(--white-bg);
+
+        .view-icon {
+
+          &::before {
+            background-color: var(--primary-color);
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .filter-icon {
+
+    &::before {
+      background-color: var(--text-color-alt);
+    }
+
+  }
+
+  .clear-filter {
+
+    &.active::before {
+      background-color: var(--text-color);
+    }
+
+    &::before {
+      background-color: var(--primary-color);
+    }
+
+    &:hover::before {
+      background-color: var(--text-color);
+    }
+  }
+
 
   // SECTIONS
   .os-home-section,
@@ -35,5 +107,38 @@
   .os-footer {
     background: var(--dark-bg);
     color: var(--text-color-alt);
+  }
+
+  &.os-body-shop {
+    background: var(--light-bg);
+
+    option {
+      color: var(--text-color);
+    }
+  }
+
+  .filter-container {
+    background: var(--white-bg);
+    box-shadow: var(--box-shadow-s);
+
+
+    .filtered {
+      .products__qty {
+        background: var(--dimmed-border-placeholder);
+        color: var(--text-color-alt);
+      }
+    }
+  }
+
+
+  .article {
+    .article__price {
+      color: var(--primary-color);
+    }
+
+    &:hover {
+      background: var(--white-bg);
+      box-shadow: var(--box-shadow-s);
+    }
   }
 }

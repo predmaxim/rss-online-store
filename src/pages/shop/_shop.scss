@@ -1,2 +1,51 @@
-@import "Base/vars";
-@import "Base/mixins";
+.os-main-shop .container {
+  display: grid;
+  gap: 50px 50px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+    "head head"
+    "aside sort"
+    "aside prod";
+
+  .catalog-header {
+    grid-area: head;
+    margin-bottom: 50px;
+
+    .os-h1,
+    .os-bread-crambs {
+      text-align: center;
+    }
+  }
+
+  .catalog-aside {
+    grid-area: aside;
+    min-width: 250px;
+  }
+
+  .catalog-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .sort-container {
+      grid-area: sort;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .products-container {
+      grid-area: prod;
+    }
+
+  }
+
+  @media screen and (width <=$tablet) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "aside"
+      "sort"
+      "prod";
+  }
+
+}

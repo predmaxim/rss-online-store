@@ -9,17 +9,31 @@ html(lang="en")
     script(src=require("Src/index.ts"), defer)
     title RSS Online Shop | Shop
 
-  body.os-body.theme-light
+  body.os-body.os-body-shop.theme-light
 
     include ShopHeader/shop-header.pug
 
-    main.os-main
+    main.os-main.os-main-shop
 
-      section.os-shop-section
+      .container
 
-        .container
+        section.catalog-header
+          h1.os-h1 Catalog
+          .os-bread-crambs
+            a(href="#" ) home
+            span  /
+            a(href="#" )  catalog
 
-          h1.os-h1
+        aside.catalog-aside
+          include Filter/filter.pug
 
+        section.catalog-body
+
+          .sort-container
+            include Sort/sort.pug
+            include View/view.pug
+
+          .products-container
+            include ProductGrid/product-grid.pug
 
     include Footer/footer.pug

@@ -1,20 +1,17 @@
-@import "Base/vars";
-@import "Base/mixins";
-
 .os-404-section {
-  padding: var(--desktop-header-height) 0 calc(var(--desktop-header-height) * 1.5);
+  padding: 70px 0 calc(var(--desktop-header-height) * 1.5);
   transition: .3s;
 
   @media screen and (width <=$notebook) {
-    padding: var(--notebook-header-height) 0 calc(var(--desktop-header-height) * 1.5);
+    padding: 70px 0 calc(var(--notebook-header-height) * 1.5);
   }
 
   @media screen and (width <=$tablet) {
-    padding: var(--tablet-header-height) 0 calc(var(--desktop-header-height) * 1.5);
+    padding: 70px 0 calc(var(--tablet-header-height) * 1.5);
   }
 
   @media screen and (width <=$mobile) {
-    padding: var(--mobile-header-height) 0 calc(var(--desktop-header-height) * 1.5);
+    padding: 70px 0 calc(var(--mobile-header-height) * 1.5);
   }
 
   .container {
