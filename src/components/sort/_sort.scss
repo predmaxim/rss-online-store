@@ -1,0 +1,36 @@
+.sort {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  &__label {
+    font-weight: 700;
+
+    @media screen and (width <=$mobile) {
+      display: none;
+    }
+  }
+
+  &__select {
+    font-weight: 700;
+  }
+
+  // &__label {}
+
+  &__select {
+    border-radius: 10px;
+    height: 50px;
+    padding: 0 15px;
+    border: 0;
+    background: var(--white-bg);
+    font-size: 18px;
+
+    option {
+      font-size: 18px;
+    }
+
+    @media screen and (width <=$mobile) {
+      font-size: 16px;
+    }
+  }
+}
