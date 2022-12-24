@@ -1,7 +1,7 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 24%));
-  gap: 15px;
+  // gap: 15px;
   transition: .3s;
 
 
@@ -9,16 +9,19 @@
     padding: 25px;
     display: grid;
     grid-template-areas:
-      "img img img"
-      "header header header"
-      "desc desc desc"
-      "btn btn price";
+      "img img"
+      "header header"
+      "desc desc"
+      "btn price";
     border-radius: 20px;
     transition: .3s;
 
     .article__img {
       cursor: pointer;
       grid-area: img;
+      text-align: center;
+      background: #fff;
+      border-radius: 20px;
 
       .product-featured-img {
         border-radius: 20px;
@@ -55,16 +58,18 @@
   }
 
   @media screen and (width <=$tablet) {
-    justify-content: space-around;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(300px, 24%));
-    gap: 30px 15px;
+    // gap: 30px 15px;
   }
 
   @media screen and (width <=$mobile) {
-    justify-content: center;
-    // grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
 
-    gap: 30px 0px;
+    // gap: 30px 0px;
+    .article__price {
+      text-align: right;
+    }
 
     .article {
       padding: 15px;
