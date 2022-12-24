@@ -1,5 +1,4 @@
 import 'Base/base';
-import 'HomeHeader/home-header';
-import 'ShopHeader/shop-header';
-import 'MiniCart/mini-cart';
+import 'Home/home';
 import 'Shop/shop';
+import 'Footer/footer';
