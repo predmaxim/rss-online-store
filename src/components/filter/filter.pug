@@ -1,0 +1,33 @@
+button.filter-icon.filter-button.hide(href="#") Filter
+.filter-container
+
+  .filter-container__head
+
+    h4.aside-header.os-h4 Filter
+
+    .filtered.hide
+      p.products__qty 0
+      a.clear-filter(href="#")
+
+  .filter-container__body
+
+    .filter.filter-type-checkbox
+
+      h5.filter__header.os-h5 Category
+
+      .filter-type-checkbox__item
+        input#category1-checkbox.filter-type-checkbox__checkbox(type="checkbox" name="category1-checkbox")
+        label.filter-type-checkbox__label(for="category1-checkbox") Category 1
+
+      .filter-type-checkbox__item
+        input#category2-checkbox.checkbox(type="checkbox" name="category2-checkbox")
+        label.checkbox__label(for="category2-checkbox") Category 2
+
+    .filter.filter-type-dual-slider
+
+      h5.filter__header.os-h5 Price
+
+      input#price-range.filter-type-dual-slider__range(type="range" name="price-range")
+
+  .filter-container__footer
+    a.copy-link(href="#") copy

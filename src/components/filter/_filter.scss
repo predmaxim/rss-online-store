@@ -1,0 +1,117 @@
+.filter-icon {
+  padding-left: 35px;
+  position: relative;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    mask: url("img/filter-icon.svg") no-repeat;
+    mask-size: contain;
+    width: 22px;
+    height: 22px;
+    margin-top: 3px;
+    margin-left: -30px;
+    transition: .3s;
+  }
+
+}
+
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  font-size: 16px;
+  padding: 40px 25px;
+  border-radius: 20px;
+  transition: opacity .3s;
+
+  &__head {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 9fr 1fr;
+    align-items: center;
+
+    // .aside-header {}
+
+    .filtered {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .products__qty {
+        text-align: center;
+        padding: 4px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 700;
+        min-width: 22px;
+        vertical-align: middle;
+      }
+
+      .clear-filter {
+        text-align: center;
+        position: relative;
+        width: 20px;
+        height: 20px;
+
+        &::before {
+          content: " ";
+          mask: url("Img/close-icon.svg") no-repeat;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          top: 0px;
+          left: 0px;
+          transition: .3s;
+          mask-size: contain;
+        }
+      }
+    }
+
+  }
+
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+
+    .filter {
+      display: flex;
+      flex-direction: column;
+      padding: 0 5px 50px;
+      margin: 0 10px;
+      border-bottom: 1px solid var(--dimmed-border-placeholder);
+
+      &__header {
+        margin-bottom: 10px;
+      }
+    }
+
+    .filter-type-checkbox {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__item {
+        display: flex;
+        gap: 15px;
+
+        // .checkbox {}
+
+        // .checkbox__label {}
+      }
+    }
+
+    .filter-type-dual-slider {
+      // &__range {}
+    }
+  }
+
+  &__footer {
+    text-align: right;
+    // .copy-link {}
+  }
+}
