@@ -132,6 +132,11 @@
 
 
   .article {
+    .article__img {
+      background: var(--white-bg);
+
+    }
+
     .article__price {
       color: var(--primary-color);
     }

@@ -20,7 +20,6 @@
       cursor: pointer;
       grid-area: img;
       text-align: center;
-      background: #fff;
       border-radius: 20px;
 
       .product-featured-img {
@@ -59,7 +58,7 @@
 
   @media screen and (width <=$tablet) {
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 24%));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 25%));
     // gap: 30px 15px;
   }
 
@@ -123,7 +122,6 @@
       cursor: pointer;
       grid-area: img;
       text-align: center;
-      background: #fff;
       border-radius: 20px;
       overflow: hidden;
 
@@ -140,6 +138,7 @@
     .article__header {
       grid-area: header;
       font-weight: 700;
+      margin-top: 10px;
     }
 
     .article__description {
@@ -150,6 +149,7 @@
 
     .article__btn.add-to-cart-btn {
       grid-area: btn;
+      margin-bottom: 10px;
     }
 
     .article__price {
@@ -157,6 +157,14 @@
       font-weight: 700;
       font-size: 24px;
     }
+  }
+
+  @media screen and (width <=$notebook) {
+    .article {
+      grid-template-columns: minmax(150px, 40%) 1fr;
+
+    }
+
   }
 
   @media screen and (width <=$mobile) {
