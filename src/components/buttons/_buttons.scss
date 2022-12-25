@@ -1,0 +1,65 @@
+// BUTTONS
+@mixin btn($bg, $hover-bg, $fsize: 16px, $padding: 14px 30px, $border-r: 50px, $full: false) {
+  cursor: pointer;
+  background: $bg;
+  font-size: $fsize;
+  color: var(--text-color-alt);
+  line-height: 1.4;
+  height: max-content;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  padding: $padding;
+  box-shadow: var(--box-shadow-xs);
+  transition: 0.3s;
+
+  @if $full ==true {
+    display: inline-block;
+    width: 100%;
+  }
+
+  @else {
+    width: fit-content;
+  }
+
+  @if $border-r {
+    border-radius: $border-r;
+  }
+
+  @if $padding {
+    padding: $padding;
+  }
+
+  @if $fsize {
+    font-size: $fsize;
+  }
+
+  &:hover {
+    background: $hover-bg;
+    box-shadow: none;
+  }
+}
+
+.primary-btn {
+  @include btn(var(--primary-color), var(--secondary-color));
+}
+
+.secondary-btn {
+  @include btn(var(--secondary-color), var(--primary-color));
+}
+
+.full-btn {
+  @include btn(var(--primary-color), var(--secondary-color), 20px, 14px 30px, $full: true);
+}
+
+.mini-cart-btn {
+  @include btn(var(--mini-cart-color), var(--secondary-color), $padding: 23px, $border-r: 50%);
+}
+
+.filter-button {
+  @include btn(var(--secondary-color), var(--primary-color), $border-r: 10px, $full: true);
+}
+
+.add-to-cart-btn {
+  @include btn(var(--primary-color), var(--secondary-color));
+}
