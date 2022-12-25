@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="icon" type="image/png" href=require('Img/favicon.png'))
+    link(rel="stylesheet" href=require("Src/style.scss"))
+    script(src=require("Src/index.ts"), defer)
+    script(src=require("product.ts"), defer)
+    title RSS Online Shop | Product
+
+  body.os-body.theme-light
+
+    include ShopHeader/shop-header.pug
+
+    main.os-main
+
+      section.os-404-section
+
+        .container
+
+          img.sad-emoticon(src=require("img/sad-emoticon.svg"), alt="sad emoticon")
+          p.header-404 404
+          p.desc-404 Sorry, the page doesn't exist
+          button.primary-btn(onclick="window.location.href='shop.html'") Back To Shop
+
+
+    include Footer/footer.pug

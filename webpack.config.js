@@ -26,6 +26,7 @@ const aliases = {
   Home: join(__dirname, './src/pages/home'),
   Shop: join(__dirname, './src/pages/shop'),
   Cart: join(__dirname, './src/pages/cart'),
+  Product: join(__dirname, './src/pages/product'),
   404: join(__dirname, './src/pages/404'),
 };
 
