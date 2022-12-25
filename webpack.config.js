@@ -8,7 +8,7 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const pages = ['home', 'shop', '404'];
+const pages = ['home', 'shop', '404', 'cart'];
 
 const aliases = {
   Src: join(__dirname, './src'),
@@ -25,6 +25,7 @@ const aliases = {
   ProductGrid: join(__dirname, './src/components/product-grid'),
   Home: join(__dirname, './src/pages/home'),
   Shop: join(__dirname, './src/pages/shop'),
+  Cart: join(__dirname, './src/pages/cart'),
   404: join(__dirname, './src/pages/404'),
 };
 
