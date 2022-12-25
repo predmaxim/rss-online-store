@@ -10,20 +10,30 @@ html(lang="en")
     script(src=require("product.ts"), defer)
     title RSS Online Shop | Product
 
-  body.os-body.theme-light
+  body.os-body.os-body-product.theme-light
 
     include ShopHeader/shop-header.pug
 
-    main.os-main
+    main.os-main.os-main-product
 
-      section.os-404-section
+      section.product-section
 
         .container
 
-          img.sad-emoticon(src=require("img/sad-emoticon.svg"), alt="sad emoticon")
-          p.header-404 404
-          p.desc-404 Sorry, the page doesn't exist
-          button.primary-btn(onclick="window.location.href='shop.html'") Back To Shop
+          .product-header
+            h1.os-h1 Product Name
+            .os-bread-crambs
+              a(href="#" ) home
+              span  /
+              a(href="#" )  2022
+              span  /
+              a(href="#" )  Product Name
+
+          .product-body
+            .column-left.product-gallery
+
+            .column-right.product-info
+
 
 
     include Footer/footer.pug
