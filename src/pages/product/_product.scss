@@ -53,10 +53,12 @@
             width: 100%;
           }
 
+          &.active,
           &:hover {
             box-shadow: 0 0 0 2px var(--dimmed-border-placeholder);
           }
         }
+
       }
 
       .product-gallery__cuurent-image {
