@@ -1,6 +1,6 @@
 .os-main-shop .container {
   display: grid;
-  gap: 50px 50px;
+  gap: 0 50px;
   grid-template-columns: 1fr 4fr;
   grid-template-areas:
     "head head"
