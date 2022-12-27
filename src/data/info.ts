@@ -10,9 +10,9 @@ export const arrCards: Card[] = [
     "price": 17,
     "stock": 500,
     "images": [
-      "./img/1-1.jpg",
-      "./img/1-1.jpg",
-      "./img/1-1.jpg"
+      "1-1.jpg",
+      "1-2.jpg",
+      "1-.jpg"
     ]
   },
 
@@ -25,9 +25,9 @@ export const arrCards: Card[] = [
     "price": 208,
     "stock": 5,
     "images": [
-      "./img/2-1.jpg",
-      "./img/2-2.jpg",
-      "./img/2-3.jpg"
+      "2-1.jpg",
+      "2-2.jpg",
+      "2-3.jpg"
     ]
   },
 
@@ -40,9 +40,9 @@ export const arrCards: Card[] = [
     "price": 348,
     "stock": 12,
     "images": [
-      "./img/3-1.jpg",
-      "./img/3-2.jpg",
-      "./img/3-3.jpg"
+      "3-1.jpg",
+      "3-2.jpg",
+      "3-3.jpg"
     ]
   },
 
@@ -55,9 +55,9 @@ export const arrCards: Card[] = [
     "price": 285,
     "stock": 14,
     "images": [
-      "./img/4-1.jpg",
-      "./img/4-2.jpg",
-      "./img/4-3.jpg"
+      "4-1.jpg",
+      "4-2.jpg",
+      "4-3.jpg"
     ]
   },
 
@@ -70,9 +70,9 @@ export const arrCards: Card[] = [
     "price": 208,
     "stock": 4,
     "images": [
-      "./img/5-1.jpg",
-      "./img/5-2.jpg",
-      "./img/5-3.jpg"
+      "5-1.jpg",
+      "5-2.jpg",
+      "5-3.jpg"
     ]
   },
 
@@ -85,9 +85,9 @@ export const arrCards: Card[] = [
     "price": 285,
     "stock": 2,
     "images": [
-      "./img/6-1.jpg",
-      "./img/6-2.jpg",
-      "./img/6-3.jpg"
+      "6-1.jpg",
+      "6-2.jpg",
+      "6-3.jpg"
     ]
   },
 
@@ -100,9 +100,9 @@ export const arrCards: Card[] = [
     "price": 300,
     "stock": 1,
     "images": [
-      "./img/7-1.jpg",
-      "./img/7-2.jpg",
-      "./img/7-3.jpg"
+      "7-1.jpg",
+      "7-2.jpg",
+      "7-3.jpg"
     ]
   },
 
@@ -115,9 +115,9 @@ export const arrCards: Card[] = [
     "price": 285,
     "stock": 2,
     "images": [
-      "./img/8-1.jpg",
-      "./img/8-2.jpg",
-      "./img/8-3.jpg"
+      "8-1.jpg",
+      "8-2.jpg",
+      "8-3.jpg"
     ]
   },
 
@@ -130,9 +130,9 @@ export const arrCards: Card[] = [
     "price": 230,
     "stock": 28,
     "images": [
-      "./img/9-1.jpg",
-      "./img/9-2.jpg",
-      "./img/9-3.jpg"
+      "9-1.jpg",
+      "9-2.jpg",
+      "9-3.jpg"
     ]
   },
 
@@ -145,9 +145,9 @@ export const arrCards: Card[] = [
     "price": 210,
     "stock": 20,
     "images": [
-      "./img/10-1.jpg",
-      "./img/10-2.jpg",
-      "./img/10-3.jpg"
+      "10-1.jpg",
+      "10-2.jpg",
+      "10-3.jpg"
     ]
   },
 
@@ -160,9 +160,9 @@ export const arrCards: Card[] = [
     "price": 450,
     "stock": 57,
     "images": [
-      "./img/11-1.jpg",
-      "./img/1-2.jpg",
-      "./img/11-3.jpg"
+      "11-1.jpg",
+      "1-2.jpg",
+      "11-3.jpg"
     ]
   },
 
@@ -175,9 +175,9 @@ export const arrCards: Card[] = [
     "price": 450,
     "stock": 68,
     "images": [
-      "./img/12-1.jpg",
-      "./img/12-2.jpg",
-      "./img/12-3.jpg"
+      "12-1.jpg",
+      "12-2.jpg",
+      "12-3.jpg"
     ]
   },
 
@@ -190,9 +190,9 @@ export const arrCards: Card[] = [
     "price": 450,
     "stock": 20,
     "images": [
-      "./img/13-1.jpg",
-      "./img/13-2.jpg",
-      "./img/13-3.jpg"
+      "13-1.jpg",
+      "13-2.jpg",
+      "13-3.jpg"
     ]
   },
 
@@ -205,9 +205,9 @@ export const arrCards: Card[] = [
     "price": 470,
     "stock": 65,
     "images": [
-      "./img/14-1.jpg",
-      "./img/14-2.jpg",
-      "./img/14-3.jpg"
+      "14-1.jpg",
+      "14-2.jpg",
+      "14-3.jpg"
     ]
   },
 
@@ -220,9 +220,9 @@ export const arrCards: Card[] = [
     "price": 360,
     "stock": 5,
     "images": [
-      "./img/15-1.jpg",
-      "./img/15-2.jpg",
-      "./img/15-3.jpg"
+      "15-1.jpg",
+      "15-2.jpg",
+      "15-3.jpg"
     ]
   },
 
@@ -235,9 +235,9 @@ export const arrCards: Card[] = [
     "price": 370,
     "stock": 10,
     "images": [
-      "./img/16-1.jpg",
-      "./img/16-2.jpg",
-      "./img/16-3.jpg"
+      "16-1.jpg",
+      "16-2.jpg",
+      "16-3.jpg"
     ]
   },
 
@@ -250,9 +250,9 @@ export const arrCards: Card[] = [
     "price": 310,
     "stock": 35,
     "images": [
-      "./img/17-1.jpg",
-      "./img/17-2.jpg",
-      "./img/17-3.jpg"
+      "17-1.jpg",
+      "17-2.jpg",
+      "17-3.jpg"
     ]
   },
 
@@ -265,9 +265,9 @@ export const arrCards: Card[] = [
     "price": 420,
     "stock": 76,
     "images": [
-      "./img/18-1.jpg",
-      "./img/18-2.jpg",
-      "./img/18-3.jpg"
+      "18-1.jpg",
+      "18-2.jpg",
+      "18-3.jpg"
     ]
   },
 
@@ -280,9 +280,9 @@ export const arrCards: Card[] = [
     "price": 420,
     "stock": 4,
     "images": [
-      "./img/19-1.jpg",
-      "./img/19-2.jpg",
-      "./img/19-3.jpg"
+      "19-1.jpg",
+      "19-2.jpg",
+      "19-3.jpg"
     ]
   },
 
@@ -295,9 +295,9 @@ export const arrCards: Card[] = [
     "price": 400,
     "stock": 5,
     "images": [
-      "./img/20-1.jpg",
-      "./img/20-2.jpg",
-      "./img/20-3.jpg"
+      "20-1.jpg",
+      "20-2.jpg",
+      "20-3.jpg"
     ]
   },
 
@@ -310,9 +310,9 @@ export const arrCards: Card[] = [
     "price": 400,
     "stock": 2,
     "images": [
-      "./img/21-1.jpg",
-      "./img/21-2.jpg",
-      "./img/21-3.jpg"
+      "21-1.jpg",
+      "21-2.jpg",
+      "21-3.jpg"
     ]
   },
 
@@ -325,9 +325,9 @@ export const arrCards: Card[] = [
     "price": 200,
     "stock": 200,
     "images": [
-      "./img/22-1.jpg",
-      "./img/22-2.jpg",
-      "./img/22-3.jpg"
+      "22-1.jpg",
+      "22-2.jpg",
+      "22-3.jpg"
     ]
   },
 
@@ -340,9 +340,9 @@ export const arrCards: Card[] = [
     "price": 185,
     "stock": 200,
     "images": [
-      "./img/23-1.jpg",
-      "./img/23-2.jpg",
-      "./img/23-3.jpg"
+      "23-1.jpg",
+      "23-2.jpg",
+      "23-3.jpg"
     ]
   },
 
@@ -355,9 +355,9 @@ export const arrCards: Card[] = [
     "price": 250,
     "stock": 183,
     "images": [
-      "./img/24-1.jpg",
-      "./img/24-2.jpg",
-      "./img/24-3.jpg"
+      "24-1.jpg",
+      "24-2.jpg",
+      "24-3.jpg"
     ]
   },
 
@@ -370,9 +370,9 @@ export const arrCards: Card[] = [
     "price": 194,
     "stock": 7,
     "images": [
-      "./img/25-1.jpg",
-      "./img/25-2.jpg",
-      "./img/25-3.jpg"
+      "25-1.jpg",
+      "25-2.jpg",
+      "25-3.jpg"
     ]
   },
 
@@ -385,9 +385,9 @@ export const arrCards: Card[] = [
     "price": 194,
     "stock": 7,
     "images": [
-      "./img/26-1.jpg",
-      "./img/26-2.jpg",
-      "./img/26-3.jpg"
+      "26-1.jpg",
+      "26-2.jpg",
+      "26-3.jpg"
     ]
   }
 ]
