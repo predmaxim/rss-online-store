@@ -60,6 +60,7 @@
   },
   "description": "",
   "dependencies": {
+    "navigo": "^8.11.1",
     "normalize.css": "^8.0.1"
   }
 }

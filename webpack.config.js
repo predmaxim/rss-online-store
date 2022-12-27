@@ -8,7 +8,7 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const pages = ['home', 'shop', '404', 'cart', 'product'];
+const pages = ['index', 'home', 'shop', '404', 'cart', 'product'];
 
 const aliases = {
   Src: join(__dirname, './src'),
@@ -30,6 +30,7 @@ const aliases = {
   Cart: join(__dirname, './src/pages/cart'),
   Product: join(__dirname, './src/pages/product'),
   404: join(__dirname, './src/pages/404'),
+  Routing: join(__dirname, './src/components/routing'),
 };
 
 const devServer = (isDev) =>
@@ -49,9 +50,7 @@ export default ({ isDev }) => ({
   mode: isDev ? 'development' : 'production',
   devtool: isDev ? 'inline-source-map' : 'source-map',
   entry: pages.reduce((config, page) => {
-    page === 'home'
-      ? (config['index'] = `./src/pages/${page}/${page}.pug`)
-      : (config[page] = `./src/pages/${page}/${page}.pug`);
+    page === 'index' ? (config[page] = `./src/${page}.pug`) : (config[page] = `./src/pages/${page}/${page}.pug`);
     return config;
   }, {}),
   output: {
