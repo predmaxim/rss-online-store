@@ -12,7 +12,7 @@ import { Cards } from './Cards'
 const cards = new Cards(arrCards);
 cards.render();
 
-const productsView = document.querySelector('.products-grid') as HTMLElement;  // .products-list
+const productsView = document.querySelector('.products-view') as HTMLElement;  // .products-list
 const btnProductsGrid = document.querySelector('.view__grid') as HTMLElement;
 const btnProductsList = document.querySelector('.view__list') as HTMLElement;
 

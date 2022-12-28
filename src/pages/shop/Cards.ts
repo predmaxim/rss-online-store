@@ -18,7 +18,7 @@ export class Cards {
       arrShow = this.arrCardsFiltered
     }
 
-    const productsView = document.querySelector('.products-grid') as HTMLElement;  // .products-list
+    const productsView = document.querySelector('.products-view') as HTMLElement;  // .products-list
 
     while (productsView.firstChild) {
       productsView.removeChild(productsView.firstChild);
@@ -42,7 +42,7 @@ export class Cards {
       const productImg = document.createElement('img') as HTMLImageElement;
       productImg.className = 'product-featured-img';
       // productImg.src = require(`Img/products/${i + 1}-1.jpg`)
-      // productImg.src = `../../assets/img/products/${i}-1.jpg`; //????????????????????????????
+      productImg.src = `Img/products/${i + 1}-1.jpg`; //????????????????????????????
       if (productImg !== null) {
         articleImg.append(productImg);
       }
