@@ -41,3 +41,61 @@ sortSelect.addEventListener("change", function() {
   cards.render()
 });
 
+const allCheckboxCategory: NodeListOf<Element> = document.querySelectorAll('.checkbox-category');
+const arrAllCheckboxCategory: Element[] = Array.from(allCheckboxCategory);
+
+arrAllCheckboxCategory.forEach((checkbox: Element) => {
+  checkbox.addEventListener('change', function(event: Event) {
+    if ((event.target as HTMLInputElement).checked) {
+      let value = (event.target as HTMLInputElement).value.toString();
+      cards.addCheckedCategory(value);
+      cards.createArrFiltered();
+      if (cards.getArrCardsFiltered().length === 0) {
+        cards.renederNon()
+      } else { cards.render() }
+
+    } else {
+      let value = (event.target as HTMLInputElement).value.toString();
+      cards.delCheckedCategory(value);
+      cards.createArrFiltered();
+      if (cards.getArrCardsFiltered().length === 0) {
+        cards.renederNon()
+      } else { cards.render() }
+    }
+  })
+});
+
+const allCheckboxYear: NodeListOf<Element> = document.querySelectorAll('.checkbox-year');
+const arrAllCheckboxYear: Element[] = Array.from(allCheckboxYear);
+
+arrAllCheckboxYear.forEach((checkbox: Element) => {
+  checkbox.addEventListener('change', function(event: Event) {
+    if ((event.target as HTMLInputElement).checked) {
+      let value = (event.target as HTMLInputElement).value.toString();
+      cards.addCheckedYear(value);
+      cards.createArrFiltered();
+      if (cards.getArrCardsFiltered().length === 0) {
+        cards.renederNon()
+      } else { cards.render() }
+
+    } else {
+      let value = (event.target as HTMLInputElement).value.toString();
+      cards.delCheckedYear(value);
+      cards.createArrFiltered();
+      if (cards.getArrCardsFiltered().length === 0) {
+        cards.renederNon()
+      } else { cards.render() }
+    }
+  })
+})
+
+
+// heckbox.addEventListener('change', function(event)
+//         {
+//             if (event.target.checked) {
+//                 alert(`${event.target.value} is checked`);
+//             }
+//             else {
+//                 alert(`${event.target.value} is unchecked`);
+//             }
+//         });
