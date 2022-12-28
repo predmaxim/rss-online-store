@@ -32,7 +32,7 @@ export class Cards {
       if (productsView !== null && article !== null) {
         productsView.append(article);
       }
-      
+
       const articleImg = document.createElement('div') as HTMLDivElement;
       articleImg.className = 'article__img';
       if (articleImg !== null) {
@@ -90,10 +90,36 @@ export class Cards {
   }
 
   addRange(filter: 'price' | 'stock', min: number, max: number) {
-    if(this.arrCardsFiltered.length === 0) {
+    if (this.arrCardsFiltered.length === 0) {
       this.arrCardsFiltered = this.arrCards.filter((item: Card) => item[filter] >= min && item[filter] <= max)
     } else {
       this.arrCardsFiltered = this.arrCardsFiltered.filter((item: Card) => item[filter] >= min && item[filter] <= max)
+    }
+  }
+
+  sort(filter: 'price' | 'year' | 'default', sortDirection?: 'increase' | 'decrease') {
+    if (this.arrCardsFiltered.length === 0) {this.arrCardsFiltered = this.arrCards}
+    if (filter === 'default') {
+      this.arrCardsFiltered.sort((a: Card, b: Card) => {
+        return a.id - b.id;
+      })
+    }
+    if (filter === 'year') {
+      this.arrCardsFiltered.sort((a: Card, b: Card) => {
+        return a.year - b.year;
+      })
+    }
+    if (filter === 'price') {
+      if (sortDirection === 'increase') {
+        this.arrCardsFiltered.sort((a: Card, b: Card) => {
+          return a.price - b.price;
+        })
+      }
+      if (sortDirection === 'decrease') {
+        this.arrCardsFiltered.sort((a: Card, b: Card) => {
+          return b.price - a.price;
+        })
+      }
     }
   }
 
