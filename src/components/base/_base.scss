@@ -61,7 +61,6 @@
     font-size: 18px;
   }
 
-
   @media screen and (width <=$mobile) {
     .os-h1 {
       font-size: 40px;
@@ -82,7 +81,6 @@
     .os-h5 {
       font-size: 16px;
     }
-
   }
 
   p {
@@ -93,7 +91,7 @@
   a {
     text-decoration: none;
     color: var(--link-color);
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
       color: var(--link-color-hover);
@@ -123,7 +121,7 @@
     visibility: hidden;
     position: absolute;
     z-index: -1;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
   }
 
   option {
@@ -132,24 +130,20 @@
 
   @media screen and (width <=$tablet) {
     .page-header {
-
       .os-h1 {
         line-height: 1.2;
         margin-bottom: 10px;
       }
     }
-
   }
 
   @media screen and (width <=$mobile) {
     font-size: 16px;
 
     .page-header {
-
       .os-bread-crambs {
         font-size: 12px;
       }
     }
-
   }
 }

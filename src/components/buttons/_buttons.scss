@@ -16,9 +16,7 @@
   @if $full ==true {
     display: inline-block;
     width: 100%;
-  }
-
-  @else {
+  } @else {
     width: fit-content;
   }
 

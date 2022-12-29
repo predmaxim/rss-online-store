@@ -2,19 +2,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 24%));
   // gap: 15px;
-  transition: .3s;
-
+  transition: 0.3s;
 
   .article {
     padding: 25px;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas:
       "img img"
       "header header"
       "desc desc"
       "btn price";
     border-radius: 20px;
-    transition: .3s;
+    transition: 0.3s;
 
     .article__img {
       cursor: pointer;
@@ -26,7 +27,7 @@
         border-radius: 20px;
         width: auto;
         height: 100%;
-        transition: .3s;
+        transition: 0.3s;
       }
 
       margin-bottom: 20px;
@@ -94,11 +95,8 @@
         }
       }
     }
-
-
   }
 }
-
 
 .products-list {
   display: grid;
@@ -106,7 +104,6 @@
   transition: 0.3s;
   grid-template-columns: 1fr;
   // grid-template-columns: repeat(auto-fit, minmax(500px, 49%));
-
 
   .article {
     padding: 25px;
@@ -121,7 +118,7 @@
       "img btn";
     gap: 10px 20px;
     border-radius: 20px;
-    transition: .3s;
+    transition: 0.3s;
 
     .article__img {
       cursor: pointer;
@@ -136,9 +133,8 @@
         height: 100%;
         object-fit: contain;
         object-position: center;
-        transition: .3s;
+        transition: 0.3s;
       }
-
     }
 
     .article__header {
@@ -172,9 +168,7 @@
   @media screen and (width <=$notebook) {
     .article {
       grid-template-columns: minmax(150px, 40%) 1fr;
-
     }
-
   }
 
   @media screen and (width <=$mobile) {

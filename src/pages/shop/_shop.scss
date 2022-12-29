@@ -36,7 +36,6 @@
     .products-container {
       grid-area: prod;
     }
-
   }
 
   @media screen and (width <=$tablet) {
@@ -48,4 +47,9 @@
       "prod";
   }
 
+  @media screen and (width <=$mobile) {
+    .catalog-aside {
+      margin-bottom: 35px;
+    }
+  }
 }

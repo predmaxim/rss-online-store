@@ -1,6 +1,6 @@
 .os-404-section {
   padding: 70px 0 calc(var(--desktop-header-height) * 1.5);
-  transition: .3s;
+  transition: 0.3s;
 
   @media screen and (width <=$notebook) {
     padding: 70px 0 calc(var(--notebook-header-height) * 1.5);

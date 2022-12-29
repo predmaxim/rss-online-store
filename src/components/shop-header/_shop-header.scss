@@ -25,7 +25,6 @@
       width: 33.33%;
 
       .nav {
-
         .nav-icon {
           cursor: pointer;
           width: 30px;
@@ -96,8 +95,7 @@
       text-align: center;
 
       .header-logo {
-
-        transition: .3s;
+        transition: 0.3s;
         width: var(--desktop-header-height);
 
         @media screen and (width <=$notebook) {
@@ -111,7 +109,6 @@
         @media screen and (width <=$mobile) {
           width: var(--mobile-header-height);
         }
-
       }
     }
 
@@ -160,7 +157,6 @@
           display: none;
         }
       }
-
     }
   }
 }

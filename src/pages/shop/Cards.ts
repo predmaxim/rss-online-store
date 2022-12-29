@@ -15,11 +15,11 @@ export class Cards {
   }
 
   getArrCardsFiltered() {
-    return this.arrCardsFiltered
+    return this.arrCardsFiltered;
   }
 
   renederNon() {
-    const productsView = document.querySelector('.products-view') as HTMLElement;  // .products-list
+    const productsView = document.querySelector('.products-view') as HTMLElement; // .products-list
 
     while (productsView.firstChild) {
       productsView.removeChild(productsView.firstChild);
@@ -27,7 +27,7 @@ export class Cards {
 
     const article = document.createElement('div') as HTMLDivElement;
     article.className = 'article';
-    article.textContent = 'No matches'
+    article.textContent = 'No matches';
     if (productsView !== null && article !== null) {
       productsView.append(article);
     }
@@ -41,14 +41,13 @@ export class Cards {
       arrShow = this.arrCardsFiltered;
     }
 
-    const productsView = document.querySelector('.products-view') as HTMLElement;  // .products-list
+    const productsView = document.querySelector('.products-view') as HTMLElement; // .products-list
 
     while (productsView.firstChild) {
       productsView.removeChild(productsView.firstChild);
     }
 
-    for(let i = 0; i < arrShow.length; i ++) {
-
+    for (let i = 0; i < arrShow.length; i++) {
       const article = document.createElement('div') as HTMLDivElement;
       article.className = 'article';
       article.setAttribute('idCard', `${arrShow[i].id}`); // add attribut for each card with string (number of card)
@@ -72,30 +71,29 @@ export class Cards {
 
       const articleHeader = document.createElement('p') as HTMLElement;
       articleHeader.className = 'article__header';
-      articleHeader.textContent = `${arrShow[i].name}`
+      articleHeader.textContent = `${arrShow[i].name}`;
       article.append(articleHeader);
 
       const articleDescription = document.createElement('p') as HTMLElement;
       articleDescription.className = 'article__description';
-      articleDescription.textContent = `${arrShow[i].year}  ${arrShow[i].description}`
+      articleDescription.textContent = `${arrShow[i].year}  ${arrShow[i].description}`;
       article.append(articleDescription);
 
       const articleButton = document.createElement('button') as HTMLButtonElement;
       articleButton.className = 'add-to-cart-btn';
       articleButton.setAttribute('idCard', `${arrShow[i].id}`); // add attribut for each card with string (number of card)
-      articleButton.textContent = 'Add to cart'
+      articleButton.textContent = 'Add to cart';
       article.append(articleButton);
 
       const articlePrice = document.createElement('p') as HTMLElement;
       articlePrice.className = 'article__price';
-      articlePrice.textContent = `${arrShow[i].price}`
+      articlePrice.textContent = `${arrShow[i].price}`;
       article.append(articlePrice);
 
       const articlePriceCurrency = document.createElement('span');
-      articlePriceCurrency.className  = 'price-currency';
+      articlePriceCurrency.className = 'price-currency';
       articlePriceCurrency.textContent = '€';
       articlePrice.prepend(articlePriceCurrency);
-
     }
   }
 
@@ -103,30 +101,38 @@ export class Cards {
     this.arrCardsFiltered = [];
     if (this.arrFiltersCategory.length === 0 && this.arrFiltersYear.length === 0) {
       this.arrCardsFiltered = this.arrCards;
-    } else if(this.arrFiltersCategory.length === 0) {
+    } else if (this.arrFiltersCategory.length === 0) {
       this.arrFiltersYear.forEach((year: string) => {
         this.arrCards.forEach((card: Card) => {
-          if (card.year.toString() === year) { this.arrCardsFiltered.push(card) }
-        })
-      })
-    } else if(this.arrFiltersYear.length === 0) {
+          if (card.year.toString() === year) {
+            this.arrCardsFiltered.push(card);
+          }
+        });
+      });
+    } else if (this.arrFiltersYear.length === 0) {
       this.arrFiltersCategory.forEach((category: string) => {
         this.arrCards.forEach((card: Card) => {
-          if (card.category === category) { this.arrCardsFiltered.push(card) }
-        })
-      })
+          if (card.category === category) {
+            this.arrCardsFiltered.push(card);
+          }
+        });
+      });
     } else {
-      let arr: Card[] = [];
+      const arr: Card[] = [];
       this.arrFiltersCategory.forEach((category: string) => {
         this.arrCards.forEach((card: Card) => {
-          if (card.category === category) { arr.push(card) }
-        })
+          if (card.category === category) {
+            arr.push(card);
+          }
+        });
       });
       this.arrFiltersYear.forEach((year: string) => {
         arr.forEach((card: Card) => {
-          if (card.year.toString() === year) { this.arrCardsFiltered.push(card) }
-        })
-      })
+          if (card.year.toString() === year) {
+            this.arrCardsFiltered.push(card);
+          }
+        });
+      });
     }
   }
 
@@ -148,36 +154,37 @@ export class Cards {
 
   addRange(filter: 'price' | 'stock', min: number, max: number) {
     if (this.arrCardsFiltered.length === 0) {
-      this.arrCardsFiltered = this.arrCards.filter((item: Card) => item[filter] >= min && item[filter] <= max)
+      this.arrCardsFiltered = this.arrCards.filter((item: Card) => item[filter] >= min && item[filter] <= max);
     } else {
-      this.arrCardsFiltered = this.arrCardsFiltered.filter((item: Card) => item[filter] >= min && item[filter] <= max)
+      this.arrCardsFiltered = this.arrCardsFiltered.filter((item: Card) => item[filter] >= min && item[filter] <= max);
     }
   }
 
   sort(filter: 'price' | 'year' | 'default', sortDirection?: 'increase' | 'decrease') {
-    if (this.arrCardsFiltered.length === 0) {this.arrCardsFiltered = this.arrCards}
+    if (this.arrCardsFiltered.length === 0) {
+      this.arrCardsFiltered = this.arrCards;
+    }
     if (filter === 'default') {
       this.arrCardsFiltered.sort((a: Card, b: Card) => {
         return a.id - b.id;
-      })
+      });
     }
     if (filter === 'year') {
       this.arrCardsFiltered.sort((a: Card, b: Card) => {
         return a.year - b.year;
-      })
+      });
     }
     if (filter === 'price') {
       if (sortDirection === 'increase') {
         this.arrCardsFiltered.sort((a: Card, b: Card) => {
           return a.price - b.price;
-        })
+        });
       }
       if (sortDirection === 'decrease') {
         this.arrCardsFiltered.sort((a: Card, b: Card) => {
           return b.price - a.price;
-        })
+        });
       }
     }
   }
-
 }
