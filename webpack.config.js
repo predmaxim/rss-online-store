@@ -8,7 +8,7 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const pages = ['index', 'home', 'shop', '404', 'cart', 'product'];
+const pages = ['home', 'shop', '404', 'cart', 'product'];
 
 const aliases = {
   Src: join(__dirname, './src'),
