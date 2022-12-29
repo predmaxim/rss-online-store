@@ -5,7 +5,7 @@ import 'Sort/sort';
 import 'ProductGrid/product-grid';
 console.log('Import Shop');
 
-import { arrCards } from '../../data/info';
+import { arrCards } from '../../data/cardsData';
 import { Cards } from './Cards';
 
 const cards = new Cards(arrCards);

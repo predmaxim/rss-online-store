@@ -1,5 +1,5 @@
 import { Card } from '../../data/Card';
-// import { arrCards } from "../../data/info"
+// import { arrCards } from "../../data/CardsData"
 
 export class Cards {
   arrCards: Card[];
