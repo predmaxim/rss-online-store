@@ -8,7 +8,7 @@
     padding: 25px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    // grid-template-rows: 1fr;
     grid-template-areas:
       "img img"
       "header header"
@@ -18,15 +18,21 @@
     transition: 0.3s;
 
     .article__img {
-      cursor: pointer;
       grid-area: img;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
       text-align: center;
       border-radius: 20px;
+      width: 220px;
+      height: 220px;
+      padding: 15px;
 
       .product-featured-img {
         border-radius: 20px;
-        width: auto;
-        height: 100%;
+        max-width: 100%;
+        max-height: 220px;
         transition: 0.3s;
       }
 
@@ -86,6 +92,9 @@
       padding: 15px;
 
       .article__img {
+        width: auto;
+        height: auto;
+
         .product-featured-img {
           border-radius: 20px;
           width: 100%;

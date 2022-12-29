@@ -33,8 +33,9 @@ export class Cards {
     }
   }
 
-  render() {
+  async render() {
     let arrShow: Card[];
+
     if (this.arrCardsFiltered.length === 0) {
       arrShow = this.arrCards;
     } else {
@@ -61,10 +62,13 @@ export class Cards {
         article.append(articleImg);
       }
 
+      // const productImg = new Image();
       const productImg = document.createElement('img') as HTMLImageElement;
       productImg.className = 'product-featured-img';
-      // productImg.src = require(`Img/products/${i + 1}-1.jpg`)
-      // productImg.src = `Img/products/${i + 1}-1.jpg`; //????????????????????????????
+
+      const imgImport = await import(`../../assets/img/products/${arrShow[i].images[0]}`);
+      productImg.src = imgImport.default;
+
       if (productImg !== null) {
         articleImg.append(productImg);
       }
