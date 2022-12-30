@@ -2,31 +2,38 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 24%));
   // gap: 15px;
-  transition: .3s;
-
+  transition: 0.3s;
 
   .article {
     padding: 25px;
     display: grid;
+    grid-template-columns: 1fr;
+    // grid-template-rows: 1fr;
     grid-template-areas:
       "img img"
       "header header"
       "desc desc"
       "btn price";
     border-radius: 20px;
-    transition: .3s;
+    transition: 0.3s;
 
     .article__img {
-      cursor: pointer;
       grid-area: img;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
       text-align: center;
       border-radius: 20px;
+      width: 220px;
+      height: 220px;
+      padding: 15px;
 
       .product-featured-img {
         border-radius: 20px;
-        width: auto;
-        height: 100%;
-        transition: .3s;
+        max-width: 100%;
+        max-height: 220px;
+        transition: 0.3s;
       }
 
       margin-bottom: 20px;
@@ -85,6 +92,9 @@
       padding: 15px;
 
       .article__img {
+        width: auto;
+        height: auto;
+
         .product-featured-img {
           border-radius: 20px;
           width: 100%;
@@ -94,11 +104,8 @@
         }
       }
     }
-
-
   }
 }
-
 
 .products-list {
   display: grid;
@@ -106,7 +113,6 @@
   transition: 0.3s;
   grid-template-columns: 1fr;
   // grid-template-columns: repeat(auto-fit, minmax(500px, 49%));
-
 
   .article {
     padding: 25px;
@@ -121,7 +127,7 @@
       "img btn";
     gap: 10px 20px;
     border-radius: 20px;
-    transition: .3s;
+    transition: 0.3s;
 
     .article__img {
       cursor: pointer;
@@ -136,9 +142,8 @@
         height: 100%;
         object-fit: contain;
         object-position: center;
-        transition: .3s;
+        transition: 0.3s;
       }
-
     }
 
     .article__header {
@@ -172,9 +177,7 @@
   @media screen and (width <=$notebook) {
     .article {
       grid-template-columns: minmax(150px, 40%) 1fr;
-
     }
-
   }
 
   @media screen and (width <=$mobile) {

@@ -1,6 +1,5 @@
 .os-body-product {
   background: var(--light-bg);
-
 }
 
 // .os-main-product {}
@@ -33,8 +32,6 @@
     }
 
     .product-gallery {
-
-
       .product-gallery__items {
         display: flex;
         flex-direction: column;
@@ -58,7 +55,6 @@
             box-shadow: 0 0 0 2px var(--dimmed-border-placeholder);
           }
         }
-
       }
 
       .product-gallery__cuurent-image {
@@ -71,7 +67,6 @@
           width: 100%;
         }
       }
-
     }
 
     .product-info {
@@ -122,7 +117,6 @@
         margin-top: 20px;
       }
     }
-
   }
 
   @media screen and (width <=$mobile) {

@@ -79,30 +79,33 @@ export default ({ isDev }) => ({
         generator: { filename: '[name].[contenthash:8][ext]' },
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
+        test: /\.(js|png|jpg|svg|webp|html|css)(\?.*)?$/i,
         type: 'asset/resource',
-        use: {
-          loader: 'responsive-loader',
-          options: {
-            outputPath: 'assets/img/',
-            name: '[name].[hash:8]-[width]w.[ext]',
-            quality: 50, // default 85
-            format: 'webp',
-            esModule: true,
-            // publicPath: 'assets/img/',
-          },
-        },
-      },
-      {
-        test: /\.svg$/i,
-        type: 'asset/resource',
-        generator: { filename: 'assets/img/[name][ext]' },
+        generator: { filename: 'assets/img/[name].[hash:8][ext]' },
       },
       // {
-      //   test: /\.(?:woff(2)?|eot|ttf|otf)$/i,
-      //   type: 'asset/inline',
-      //   generator: { filename: 'assets/fonts/[name][ext]' },
+      //   test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
+      //   type: 'asset/resource',
+      //   use: {
+      //     loader: 'responsive-loader',
+      //     options: {
+      //       // outputPath: 'assets/img/',
+      //       name: 'assets/img/[name].[ext]',
+      //       quality: 50, // default 85
+      //       format: 'webp',
+      //       esModule: true,
+      //       exclude: 'assets/img/favicon.png',
+      //       // cacheDirectory: true,
+      //       // emitFile: false,
+      //       // publicPath: '/',
+      //     },
+      //   },
       // },
+      {
+        test: /\.(?:woff(2)?|eot|ttf|otf)$/i,
+        type: 'asset/inline',
+        generator: { filename: 'assets/fonts/[name][ext]' },
+      },
       {
         test: /\.(css|sass|scss)$/i,
         use: [

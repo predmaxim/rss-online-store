@@ -28,7 +28,6 @@
   color: var(--text-color);
 
   .nav-icon {
-
     &.active::before {
       background-color: var(--primary-color);
     }
@@ -43,12 +42,9 @@
   }
 
   .view {
-
     &__list,
     &__grid {
-
       .view-icon {
-
         &::before {
           background-color: var(--dimmed-border-placeholder);
         }
@@ -59,27 +55,21 @@
         background: var(--white-bg);
 
         .view-icon {
-
           &::before {
             background-color: var(--primary-color);
           }
         }
       }
-
     }
-
   }
 
   .filter-icon {
-
     &::before {
       background-color: var(--text-color-alt);
     }
-
   }
 
   .clear-filter {
-
     &.active::before {
       background-color: var(--text-color);
     }
@@ -92,7 +82,6 @@
       background-color: var(--text-color);
     }
   }
-
 
   // SECTIONS
   .os-home-section,
@@ -121,7 +110,6 @@
     background: var(--white-bg);
     box-shadow: var(--box-shadow-s);
 
-
     .filtered {
       .products__qty {
         background: var(--dimmed-border-placeholder);
@@ -130,11 +118,9 @@
     }
   }
 
-
   .article {
     .article__img {
       background: var(--white-bg);
-
     }
 
     .article__price {

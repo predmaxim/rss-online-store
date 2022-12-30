@@ -8,7 +8,7 @@
     position: relative;
 
     &::before {
-      transition: .3s;
+      transition: 0.3s;
       content: " ";
       width: 30px;
       height: 30px;
@@ -23,7 +23,7 @@
     border-radius: 10px;
 
     &:hover {
-      transition: .3s;
+      transition: 0.3s;
     }
   }
 

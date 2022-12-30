@@ -11,10 +11,6 @@
     }
   }
 
-  &__select {
-    font-weight: 700;
-  }
-
   // &__label {}
 
   &__select {
@@ -24,6 +20,7 @@
     border: 0;
     background: var(--white-bg);
     font-size: 18px;
+    font-weight: 700;
 
     option {
       font-size: 18px;
