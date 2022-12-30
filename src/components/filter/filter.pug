@@ -63,8 +63,14 @@ button.filter-icon.filter-button.hide(href="#") Filter
     .filter.filter-type-dual-slider
 
       h5.filter__header.os-h5 Price
+      include dual-slider/dual-slider-price.pug
 
-      input#price-range.filter-type-dual-slider__range(type="range" name="price-range")
+    .filter.filter-type-dual-slider
+
+      h5.filter__header.os-h5 In Stock
+      include dual-slider/dual-slider-instock.pug
+      //- input#price-range.filter-type-dual-slider__range(type="range" name="price-range")
+
 
   .filter-container__footer
     a.copy-link(href="#") copy

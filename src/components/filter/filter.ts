@@ -1,3 +1,4 @@
+import './dual-slider/dual-slider';
 console.log('Import Filter');
 
 const filterIcon: HTMLDivElement = <HTMLDivElement>document.querySelector('.filter-icon');
