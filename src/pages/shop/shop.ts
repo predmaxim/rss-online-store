@@ -1,14 +1,13 @@
+import { arrCards } from '../../data/cardsData';
+import ProductCards from './ProductCards';
 import 'ShopHeader/shop-header';
-import 'Filter/filter';
+import 'ProductGrid/product-grid';
 import 'View/view';
 import 'Sort/sort';
-import 'ProductGrid/product-grid';
+import 'Filter/filter';
 console.log('Import Shop');
 
-import { arrCards } from '../../data/cardsData';
-import { Cards } from './Cards';
-
-const cards = new Cards(arrCards);
+const cards = new ProductCards(arrCards);
 cards.render();
 
 const productsView = document.querySelector('.products-view') as HTMLElement; // .products-list
@@ -102,12 +101,4 @@ arrAllCheckboxYear.forEach((checkbox: Element) => {
   });
 });
 
-// heckbox.addEventListener('change', function(event)
-//         {
-//             if (event.target.checked) {
-//                 alert(`${event.target.value} is checked`);
-//             }
-//             else {
-//                 alert(`${event.target.value} is unchecked`);
-//             }
-//         });
+export { cards };

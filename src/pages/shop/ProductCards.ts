@@ -1,13 +1,12 @@
-import { Card } from '../../data/Card';
-// import { arrCards } from "../../data/CardsData"
+import ICard from '../../data/ICard';
 
-export class Cards {
-  arrCards: Card[];
-  arrCardsFiltered: Card[];
+class ProductCards {
+  arrCards: ICard[];
+  arrCardsFiltered: ICard[];
   arrFiltersCategory: string[];
   arrFiltersYear: string[];
 
-  constructor(arrCards: Card[]) {
+  constructor(arrCards: ICard[]) {
     this.arrCards = arrCards;
     this.arrCardsFiltered = [];
     this.arrFiltersCategory = [];
@@ -34,7 +33,7 @@ export class Cards {
   }
 
   async render() {
-    let arrShow: Card[];
+    let arrShow: ICard[];
 
     if (this.arrCardsFiltered.length === 0) {
       arrShow = this.arrCards;
@@ -107,7 +106,7 @@ export class Cards {
       this.arrCardsFiltered = this.arrCards;
     } else if (this.arrFiltersCategory.length === 0) {
       this.arrFiltersYear.forEach((year: string) => {
-        this.arrCards.forEach((card: Card) => {
+        this.arrCards.forEach((card: ICard) => {
           if (card.year.toString() === year) {
             this.arrCardsFiltered.push(card);
           }
@@ -115,23 +114,23 @@ export class Cards {
       });
     } else if (this.arrFiltersYear.length === 0) {
       this.arrFiltersCategory.forEach((category: string) => {
-        this.arrCards.forEach((card: Card) => {
+        this.arrCards.forEach((card: ICard) => {
           if (card.category === category) {
             this.arrCardsFiltered.push(card);
           }
         });
       });
     } else {
-      const arr: Card[] = [];
+      const arr: ICard[] = [];
       this.arrFiltersCategory.forEach((category: string) => {
-        this.arrCards.forEach((card: Card) => {
+        this.arrCards.forEach((card: ICard) => {
           if (card.category === category) {
             arr.push(card);
           }
         });
       });
       this.arrFiltersYear.forEach((year: string) => {
-        arr.forEach((card: Card) => {
+        arr.forEach((card: ICard) => {
           if (card.year.toString() === year) {
             this.arrCardsFiltered.push(card);
           }
@@ -158,9 +157,9 @@ export class Cards {
 
   addRange(filter: 'price' | 'stock', min: number, max: number) {
     if (this.arrCardsFiltered.length === 0) {
-      this.arrCardsFiltered = this.arrCards.filter((item: Card) => item[filter] >= min && item[filter] <= max);
+      this.arrCardsFiltered = this.arrCards.filter((item: ICard) => item[filter] >= min && item[filter] <= max);
     } else {
-      this.arrCardsFiltered = this.arrCardsFiltered.filter((item: Card) => item[filter] >= min && item[filter] <= max);
+      this.arrCardsFiltered = this.arrCardsFiltered.filter((item: ICard) => item[filter] >= min && item[filter] <= max);
     }
   }
 
@@ -169,26 +168,28 @@ export class Cards {
       this.arrCardsFiltered = this.arrCards;
     }
     if (filter === 'default') {
-      this.arrCardsFiltered.sort((a: Card, b: Card) => {
+      this.arrCardsFiltered.sort((a: ICard, b: ICard) => {
         return a.id - b.id;
       });
     }
     if (filter === 'year') {
-      this.arrCardsFiltered.sort((a: Card, b: Card) => {
+      this.arrCardsFiltered.sort((a: ICard, b: ICard) => {
         return a.year - b.year;
       });
     }
     if (filter === 'price') {
       if (sortDirection === 'increase') {
-        this.arrCardsFiltered.sort((a: Card, b: Card) => {
+        this.arrCardsFiltered.sort((a: ICard, b: ICard) => {
           return a.price - b.price;
         });
       }
       if (sortDirection === 'decrease') {
-        this.arrCardsFiltered.sort((a: Card, b: Card) => {
+        this.arrCardsFiltered.sort((a: ICard, b: ICard) => {
           return b.price - a.price;
         });
       }
     }
   }
 }
+
+export default ProductCards;

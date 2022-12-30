@@ -1,4 +1,4 @@
-export interface Card {
+interface ICard {
   id: number;
   name: string;
   category: string;
@@ -8,3 +8,5 @@ export interface Card {
   stock: number;
   images: string[];
 }
+
+export default ICard;
