@@ -1,13 +1,15 @@
-type DualSliderOptions = {
-  fromSlider: HTMLInputElement;
-  toSlider: HTMLInputElement;
-  fromVal: HTMLDivElement;
-  toVal: HTMLDivElement;
+import Card from '../../../data/Card';
+// import ProductCards from '../../../pages/shop/ProductCards';
+import cards from '../../../pages/shop/shop';
+
+interface DualSliderOptions {
+  fromSlider: string;
+  toSlider: string;
+  fromVal: string;
+  toVal: string;
   sliderColor: string;
   rangeColor: string;
-  min: number;
-  max: number;
-};
+}
 
 class DualSlider {
   fromSlider;
@@ -16,22 +18,20 @@ class DualSlider {
   toVal;
   sliderColor;
   rangeColor;
-  min;
-  max;
+  min = 0;
+  max = 100;
 
   constructor(options: DualSliderOptions) {
-    const { fromSlider, toSlider, fromVal, toVal, sliderColor, rangeColor, min, max } = options;
-    this.fromSlider = fromSlider;
-    this.toSlider = toSlider;
-    this.fromVal = fromVal;
-    this.toVal = toVal;
+    const { fromSlider, toSlider, fromVal, toVal, sliderColor, rangeColor } = options;
+    this.fromSlider = <HTMLInputElement>document.querySelector(fromSlider);
+    this.toSlider = <HTMLInputElement>document.querySelector(toSlider);
+    this.fromVal = <HTMLInputElement>document.querySelector(fromVal);
+    this.toVal = <HTMLInputElement>document.querySelector(toVal);
     this.sliderColor = sliderColor;
     this.rangeColor = rangeColor;
-    this.min = min;
-    this.max = max;
   }
 
-  start() {
+  init() {
     this.fromSlider.oninput = () => this.controlFromSlider(this.fromSlider, this.toSlider, this.fromVal);
     this.toSlider.oninput = () => this.controlToSlider(this.fromSlider, this.toSlider, this.toVal);
 
@@ -148,6 +148,16 @@ class DualSlider {
     } else {
       this.toSlider.style.zIndex = `${0}`;
     }
+  }
+
+  getPrice(opt: string): number {
+    const tempArr = cards.arrCardsFiltered ? cards.arrCardsFiltered.slice() : cards.arrCards.slice();
+    console.log(tempArr);
+    return tempArr.reduce((acc: number, cur: Card): number => {
+      if (opt === 'min' && cur.price < acc) acc = cur.price;
+      if (opt === 'max' && cur.price > acc) acc = cur.price;
+      return acc;
+    }, 0);
   }
 }
 
