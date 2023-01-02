@@ -11,66 +11,15 @@ button.filter-icon.filter-button.hide(href="#") Filter
 
   .filter-container__body
 
-    .filter.filter-type-checkbox
+    .filter.filter-type-checkbox.filter-type-checkbox-category
 
-      h5.filter__header.os-h5 Category
+    .filter.filter-type-checkbox.filter-type-checkbox-year
 
-      .filter-type-checkbox__item
-        input#category1-checkbox.filter-type-checkbox__checkbox.checkbox-category(type="checkbox" name="category1-checkbox" value="yarn")
-        label.filter-type-checkbox__label(for="category1-checkbox") yarn
-
-      .filter-type-checkbox__item
-        input#category2-checkbox.filter-type-checkbox__checkbox.checkbox-category(type="checkbox" name="category2-checkbox" value="scarf")
-        label.checkbox__label(for="category2-checkbox") scarf
-
-      .filter-type-checkbox__item
-        input#category3-checkbox.filter-type-checkbox__checkbox.checkbox-category(type="checkbox" name="category3-checkbox" value="plaid")
-        label.checkbox__label(for="category3-checkbox") plaid
-
-      .filter-type-checkbox__item
-        input#category4-checkbox.filter-type-checkbox__checkbox.checkbox-category(type="checkbox" name="category4-checkbox" value="hat")
-        label.checkbox__label(for="category4-checkbox") hat
-
-    .filter.filter-type-checkbox
-
-      h5.filter__header.os-h5 Year
-
-      .filter-type-checkbox__item
-        input#year1-checkbox.filter-type-checkbox__checkbox.checkbox-year(type="checkbox" name="year1-checkbox" value="2017")
-        label.filter-type-checkbox__label(for="year1-checkbox") 2017
-
-      .filter-type-checkbox__item
-        input#year2-checkbox.filter-type-checkbox__checkbox.checkbox-year(type="checkbox" name="year2-checkbox" value="2018")
-        label.filter-type-checkbox__label(for="year2-checkbox") 2018
-
-      .filter-type-checkbox__item
-        input#year3-checkbox.filter-type-checkbox__checkbox.checkbox-year(type="checkbox" name="year3-checkbox" value="2019")
-        label.filter-type-checkbox__label(for="year3-checkbox") 2019
-
-      .filter-type-checkbox__item
-        input#year4-checkbox.filter-type-checkbox__checkbox.checkbox-year(type="checkbox" name="year4-checkbox" value="2020")
-        label.filter-type-checkbox__label(for="year4-checkbox") 2020
-
-      .filter-type-checkbox__item
-        input#year5-checkbox.filter-type-checkbox__checkbox.checkbox-year(type="checkbox" name="year5-checkbox" value="2021")
-        label.filter-type-checkbox__label(for="year5-checkbox") 2021
-
-      .filter-type-checkbox__item
-        input#year6-checkbox.filter-type-checkbox__checkbox.checkbox-year(type="checkbox" name="year6-checkbox" value="2022")
-        label.filter-type-checkbox__label(for="year6-checkbox") 2022
-
-
-    .filter.filter-type-dual-slider
-
-      h5.filter__header.os-h5 Price
+    .filter.filter-type-dual-slider.filter-type-dual-slider-price
       include dual-slider/dual-slider-price.pug
 
-    .filter.filter-type-dual-slider
-
-      h5.filter__header.os-h5 In Stock
+    .filter.filter-type-dual-slider.filter-type-dual-slider-instock
       include dual-slider/dual-slider-instock.pug
-      //- input#price-range.filter-type-dual-slider__range(type="range" name="price-range")
 
-
-  .filter-container__footer
-    a.copy-link(href="#") copy
+    .filter-container__footer
+      a.copy-link(href="#") copy

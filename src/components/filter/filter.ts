@@ -1,4 +1,5 @@
 import './dual-slider/dual-slider';
+import './checkbox/checkboxes';
 console.log('Import Filter');
 
 const filterIcon: HTMLDivElement = <HTMLDivElement>document.querySelector('.filter-icon');
