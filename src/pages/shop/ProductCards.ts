@@ -1,7 +1,6 @@
-import { Card } from '../../data/Card';
-// import { arrCards } from "../../data/CardsData"
+import Card from '../../data/Card';
 
-export class Cards {
+class ProductCards {
   arrCards: Card[];
   arrCardsFiltered: Card[];
   arrFiltersCategory: string[];
@@ -25,7 +24,7 @@ export class Cards {
       productsView.removeChild(productsView.firstChild);
     }
 
-    const article = document.createElement('div') as HTMLDivElement;
+    const article = document.createElement('div');
     article.className = 'article';
     article.textContent = 'No matches';
     if (productsView !== null && article !== null) {
@@ -49,47 +48,43 @@ export class Cards {
     }
 
     for (let i = 0; i < arrShow.length; i++) {
-      const article = document.createElement('div') as HTMLDivElement;
+      const article = document.createElement('div');
       article.className = 'article';
       article.setAttribute('idCard', `${arrShow[i].id}`); // add attribut for each card with string (number of card)
       if (productsView !== null && article !== null) {
         productsView.append(article);
       }
 
-      const articleImg = document.createElement('div') as HTMLDivElement;
+      const articleImg = document.createElement('div');
       articleImg.className = 'article__img';
       if (articleImg !== null) {
         article.append(articleImg);
       }
 
-      // const productImg = new Image();
-      const productImg = document.createElement('img') as HTMLImageElement;
+      const productImg = document.createElement('img');
       productImg.className = 'product-featured-img';
 
       const imgImport = await import(`../../assets/img/products/${arrShow[i].images[0]}`);
       productImg.src = imgImport.default;
+      articleImg.append(productImg);
 
-      if (productImg !== null) {
-        articleImg.append(productImg);
-      }
-
-      const articleHeader = document.createElement('p') as HTMLElement;
+      const articleHeader = document.createElement('p');
       articleHeader.className = 'article__header';
       articleHeader.textContent = `${arrShow[i].name}`;
       article.append(articleHeader);
 
-      const articleDescription = document.createElement('p') as HTMLElement;
+      const articleDescription = document.createElement('p');
       articleDescription.className = 'article__description';
       articleDescription.textContent = `${arrShow[i].year}  ${arrShow[i].description}`;
       article.append(articleDescription);
 
-      const articleButton = document.createElement('button') as HTMLButtonElement;
+      const articleButton = document.createElement('button');
       articleButton.className = 'add-to-cart-btn';
       articleButton.setAttribute('idCard', `${arrShow[i].id}`); // add attribut for each card with string (number of card)
       articleButton.textContent = 'Add to cart';
       article.append(articleButton);
 
-      const articlePrice = document.createElement('p') as HTMLElement;
+      const articlePrice = document.createElement('p');
       articlePrice.className = 'article__price';
       articlePrice.textContent = `${arrShow[i].price}`;
       article.append(articlePrice);
@@ -192,3 +187,5 @@ export class Cards {
     }
   }
 }
+
+export default ProductCards;

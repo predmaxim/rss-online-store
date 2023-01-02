@@ -1,6 +1,6 @@
-import { Card } from 'Card';
+import Card from './Card';
 
-export const arrCards: Card[] = [
+const arrCards: Card[] = [
   {
     id: 1,
     name: 'Wool yarn',
@@ -287,3 +287,5 @@ export const arrCards: Card[] = [
     images: ['26-1.jpg', '26-2.jpg', '26-3.jpg'],
   },
 ];
+
+export default arrCards;

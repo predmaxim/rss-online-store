@@ -12,6 +12,7 @@ const pages = ['home', 'shop', '404', 'cart', 'product'];
 
 const aliases = {
   Src: join(__dirname, './src'),
+  Data: join(__dirname, './src/data'),
   Img: join(__dirname, './src/assets/img'),
   Base: join(__dirname, './src/components/base'),
   Footer: join(__dirname, './src/components/footer'),
