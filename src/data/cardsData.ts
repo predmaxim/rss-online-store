@@ -1,6 +1,6 @@
-import ICard from './ICard';
+import Card from './Card';
 
-export const arrCards: ICard[] = [
+const arrCards: Card[] = [
   {
     id: 1,
     name: 'Wool yarn',
@@ -287,3 +287,5 @@ export const arrCards: ICard[] = [
     images: ['26-1.jpg', '26-2.jpg', '26-3.jpg'],
   },
 ];
+
+export default arrCards;

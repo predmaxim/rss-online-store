@@ -1,4 +1,4 @@
-interface ICard {
+interface Card {
   id: number;
   name: string;
   category: string;
@@ -9,4 +9,4 @@ interface ICard {
   images: string[];
 }
 
-export default ICard;
+export default Card;
