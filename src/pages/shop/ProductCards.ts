@@ -28,7 +28,7 @@ class ProductCards {
   }
 
   renederNon() {
-    const productsView = document.querySelector('.products-view') as HTMLElement; // .products-list
+    const productsView = <HTMLElement>document.querySelector('.products-view'); // .products-list
 
     while (productsView.firstChild) {
       productsView.removeChild(productsView.firstChild);
@@ -73,9 +73,11 @@ class ProductCards {
 
       const productImg = document.createElement('img');
       productImg.className = 'product-featured-img';
+      productImg.setAttribute('idCard', `${arrShow[i].id}`); // add attribut for each card with string (number of card)
 
       productImg.addEventListener('click', () => {
         window.location.href = 'product.html';
+        localStorage.setItem('idCard', arrShow[i].id.toString());
       })
 
       const imgImport = await import(`../../assets/img/products/${arrShow[i].images[0]}`);
