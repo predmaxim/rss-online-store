@@ -13,7 +13,7 @@ class CheckboxFilter {
 
   constructor(options: CheckboxFilterOptions) {
     const { filterBody, filterType } = options;
-    this.filterBody = <HTMLElement>document.querySelector(`.${filterBody}`);
+    this.filterBody = <HTMLElement>document.querySelector(filterBody);
     this.filterType = filterType;
   }
 

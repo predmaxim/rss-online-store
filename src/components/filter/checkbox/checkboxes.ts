@@ -2,12 +2,12 @@ import { CheckboxFilterOptions, CheckboxFilter } from './CheckboxFilter';
 console.log('Import checkbox');
 
 const optionsYear: CheckboxFilterOptions = {
-  filterBody: 'filter-type-checkbox-year',
+  filterBody: '.filter-type-checkbox-year',
   filterType: 'year',
 };
 
 const optionsCategory: CheckboxFilterOptions = {
-  filterBody: 'filter-type-checkbox-category',
+  filterBody: '.filter-type-checkbox-category',
   filterType: 'category',
 };
 
