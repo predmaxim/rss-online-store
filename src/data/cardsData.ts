@@ -119,7 +119,7 @@ const arrCards: Card[] = [
     year: 2022,
     price: 450,
     stock: 57,
-    images: ['11-1.jpg', '1-2.jpg', '11-3.jpg'],
+    images: ['11-1.jpg', '11-2.jpg', '11-3.jpg'],
   },
 
   {
