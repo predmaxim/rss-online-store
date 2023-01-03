@@ -74,6 +74,10 @@ class ProductCards {
       const productImg = document.createElement('img');
       productImg.className = 'product-featured-img';
 
+      productImg.addEventListener('click', () => {
+        window.location.href = 'product.html';
+      })
+
       const imgImport = await import(`../../assets/img/products/${arrShow[i].images[0]}`);
       productImg.src = imgImport.default;
       articleImg.append(productImg);
