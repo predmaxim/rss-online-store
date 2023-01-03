@@ -6,6 +6,7 @@
     "head head"
     "aside sort"
     "aside prod";
+  padding-bottom: 150px;
 
   .page-header {
     grid-area: head;
@@ -19,7 +20,7 @@
 
   .catalog-aside {
     grid-area: aside;
-    min-width: 250px;
+    min-width: 200px;
   }
 
   .catalog-body {
