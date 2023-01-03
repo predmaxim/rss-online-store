@@ -66,6 +66,12 @@ class DualSlider {
 
     this.toSlider.min = String(this.min);
     this.toSlider.max = String(this.max);
+
+    this.fromSlider.value = String(this.min);
+    this.toSlider.value = String(this.max);
+
+    this.fromVal.textContent = String(this.min);
+    this.toVal.textContent = String(this.max);
   }
 
   render(): void {
