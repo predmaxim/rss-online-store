@@ -11,6 +11,16 @@ class ProductCards {
     this.arrCardsFiltered = [];
     this.arrFiltersCategory = [];
     this.arrFiltersYear = [];
+    this.setEvent('filter');
+  }
+
+  setEvent(name: string) {
+    addEventListener(name, () => console.log(`${name}`));
+  }
+
+  generateEvent(name: string): void {
+    const event = new CustomEvent(`${name}`, { bubbles: true });
+    dispatchEvent(event);
   }
 
   getArrCardsFiltered() {
@@ -133,6 +143,7 @@ class ProductCards {
         });
       });
     }
+    this.generateEvent('filter');
   }
 
   addCheckedCategory(filterItem: string) {
