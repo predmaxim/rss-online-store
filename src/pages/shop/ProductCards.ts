@@ -5,21 +5,20 @@ class ProductCards {
   arrCardsFiltered: Card[];
   arrFiltersCategory: string[];
   arrFiltersYear: string[];
+  arrFiltersPrice: string[];
+  arrFiltersStock: string[];
 
   constructor(arrCards: Card[]) {
     this.arrCards = arrCards;
     this.arrCardsFiltered = [];
     this.arrFiltersCategory = [];
     this.arrFiltersYear = [];
-    this.setEvent('filter');
+    this.arrFiltersPrice = [];
+    this.arrFiltersStock = [];
   }
 
-  setEvent(name: string) {
-    addEventListener(name, () => console.log(`${name}`));
-  }
-
-  generateEvent(name: string): void {
-    const event = new CustomEvent(`${name}`, { bubbles: true });
+  genEvent(name: string): void {
+    const event = new Event(`${name}`, { bubbles: true });
     dispatchEvent(event);
   }
 
@@ -108,7 +107,12 @@ class ProductCards {
 
   createArrFiltered() {
     this.arrCardsFiltered = [];
-    if (this.arrFiltersCategory.length === 0 && this.arrFiltersYear.length === 0) {
+    if (
+      this.arrFiltersCategory.length === 0 &&
+      this.arrFiltersYear.length === 0 &&
+      this.arrFiltersPrice.length === 0 &&
+      this.arrFiltersStock.length === 0
+    ) {
       this.arrCardsFiltered = this.arrCards;
     } else if (this.arrFiltersCategory.length === 0) {
       this.arrFiltersYear.forEach((year: string) => {
@@ -122,6 +126,22 @@ class ProductCards {
       this.arrFiltersCategory.forEach((category: string) => {
         this.arrCards.forEach((card: Card) => {
           if (card.category === category) {
+            this.arrCardsFiltered.push(card);
+          }
+        });
+      });
+    } else if (this.arrFiltersPrice.length === 0) {
+      this.arrFiltersPrice.forEach((price: string) => {
+        this.arrCards.forEach((card: Card) => {
+          if (card.price.toString() === price) {
+            this.arrCardsFiltered.push(card);
+          }
+        });
+      });
+    } else if (this.arrFiltersStock.length === 0) {
+      this.arrFiltersStock.forEach((stock: string) => {
+        this.arrCards.forEach((card: Card) => {
+          if (card.stock.toString() === stock) {
             this.arrCardsFiltered.push(card);
           }
         });
@@ -142,8 +162,22 @@ class ProductCards {
           }
         });
       });
+      this.arrFiltersPrice.forEach((price: string) => {
+        arr.forEach((card: Card) => {
+          if (card.price.toString() === price) {
+            this.arrCardsFiltered.push(card);
+          }
+        });
+      });
+      this.arrFiltersStock.forEach((stock: string) => {
+        arr.forEach((card: Card) => {
+          if (card.stock.toString() === stock) {
+            this.arrCardsFiltered.push(card);
+          }
+        });
+      });
     }
-    this.generateEvent('filter');
+    this.genEvent('filter');
   }
 
   addCheckedCategory(filterItem: string) {
