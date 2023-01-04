@@ -63,6 +63,6 @@
 }
 
 .buy-now-btn {
-  @include btn(var(--primary-color), var(--secondary-color));
+  @include btn(var(--secondary-color), var(--primary-color));
   margin-right: 20px;
 }
