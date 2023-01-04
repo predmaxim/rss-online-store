@@ -31,6 +31,7 @@ const aliases = {
   Cart: join(__dirname, './src/pages/cart'),
   Product: join(__dirname, './src/pages/product'),
   404: join(__dirname, './src/pages/404'),
+  Routing: join(__dirname, './src/components/routing'),
 };
 
 const devServer = (isDev) =>
@@ -50,9 +51,7 @@ export default ({ isDev }) => ({
   mode: isDev ? 'development' : 'production',
   devtool: isDev ? 'inline-source-map' : 'source-map',
   entry: pages.reduce((config, page) => {
-    page === 'home'
-      ? (config['index'] = `./src/pages/${page}/${page}.pug`)
-      : (config[page] = `./src/pages/${page}/${page}.pug`);
+    page === 'index' ? (config[page] = `./src/${page}.pug`) : (config[page] = `./src/pages/${page}/${page}.pug`);
     return config;
   }, {}),
   output: {
