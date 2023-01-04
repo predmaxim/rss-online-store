@@ -25,7 +25,7 @@
     "url": "https://github.com/predmaxim/rss-online-store/issues"
   },
   "devDependencies": {
-    "@types/node": "^18.11.11",
+    "@types/node": "^18.11.18",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
