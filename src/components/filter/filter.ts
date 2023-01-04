@@ -66,5 +66,4 @@ const stockSlider: DualSlider = new DualSlider(optionsInStock);
 priceSlider.init();
 stockSlider.init();
 
-// query
 export { showFilterBtn, priceSlider, stockSlider, checkboxFilterYear, checkboxFilterCategory };
