@@ -31,6 +31,7 @@ const aliases = {
   Cart: join(__dirname, './src/pages/cart'),
   Product: join(__dirname, './src/pages/product'),
   404: join(__dirname, './src/pages/404'),
+  BuyNow: join(__dirname, './src/components/buy-now'),
 };
 
 const devServer = (isDev) =>
