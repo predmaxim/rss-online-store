@@ -25,7 +25,14 @@ class CheckboxFilter {
       if (this.filterType === 'year') acc.push(cur.year);
       return [...new Set(acc)];
     }, []);
+
     this.render(names);
+    this.filter();
+  }
+
+  genEvent(name: string): void {
+    const event = new Event(`${name}`, { bubbles: true });
+    dispatchEvent(event);
   }
 
   render(names: (string | number)[]) {
@@ -36,7 +43,7 @@ class CheckboxFilter {
 
     names.forEach((name) => {
       const item = document.createElement('div');
-      item.className = 'filter-type-checkbox__item ';
+      item.className = 'filter-type-checkbox__item';
 
       const checkbox = <HTMLInputElement>document.createElement('input');
       checkbox.type = 'checkbox';
@@ -55,19 +62,20 @@ class CheckboxFilter {
       this.filterBody.insertAdjacentElement('beforeend', item);
       // console.log(...[checkbox, label]);
     });
-    this.filter();
   }
 
   filter() {
     //! FIXME: make more universal
-    // const allCheckboxes: Element[] = [...this.filterBody.querySelectorAll(`.checkbox-${this.filterType}`)];
+    //! const allCheckboxes: Element[] = [...this.filterBody.querySelectorAll(`.checkbox-${this.filterType}`)];
 
     if (this.filterType === 'year') {
       const allCheckboxYear: NodeListOf<Element> = document.querySelectorAll('.checkbox-year');
       const arrAllCheckboxYear: Element[] = Array.from(allCheckboxYear);
 
       arrAllCheckboxYear.forEach((checkbox: Element) => {
-        checkbox.addEventListener('change', function (event: Event) {
+        checkbox.addEventListener('change', (event: Event) => {
+          this.genEvent('checkbox');
+
           if ((event.target as HTMLInputElement).checked) {
             const value = (event.target as HTMLInputElement).value.toString();
             cards.addCheckedYear(value);
@@ -96,7 +104,9 @@ class CheckboxFilter {
       const arrAllCheckboxCategory: Element[] = Array.from(allCheckboxCategory);
 
       arrAllCheckboxCategory.forEach((checkbox: Element) => {
-        checkbox.addEventListener('change', function (event: Event) {
+        checkbox.addEventListener('change', (event: Event) => {
+          this.genEvent('checkbox');
+
           if ((event.target as HTMLInputElement).checked) {
             const value = (event.target as HTMLInputElement).value.toString();
             cards.addCheckedCategory(value);
