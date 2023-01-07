@@ -53,6 +53,10 @@
     font-weight: 400;
     font-size: 16px;
   }
+
+  &:valid {
+    background-color:  #55e61221;
+  }
 }
 
 
@@ -72,7 +76,9 @@
 }
 
 .input-buy-now-card::-webkit-outer-spin-button,
-.input-buy-now-card::-webkit-inner-spin-button {
+.input-buy-now-card::-webkit-inner-spin-button,
+#input-buy-now-phone::-webkit-outer-spin-button,
+#input-buy-now-phone::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
@@ -100,6 +106,7 @@ input[type='number'] {
   background: #EB7049;
   color: #fff;
   font-weight: 700;
+  margin-top: 20px;
 
   &:hover {
     cursor: pointer;
@@ -125,4 +132,8 @@ input[type='number'] {
     padding: 20px;
   }
 
+}
+
+.block-confirm-data {
+  display: none;
 }
