@@ -192,63 +192,28 @@ class ProductCards {
 
     if (filter === 'default') {
       main.replaceChildren(
-        ...Array.from(main.children).sort(
-          (a, b) => Number(a.attributes.idcard.value.match(/\d+/)) - Number(b.attributes.idcard.value.match(/\d+/))
-        )
+        ...Array.from(main.children).sort((a, b) => Number(a.getAttribute('idcard')) - Number(b.getAttribute('idcard')))
       );
     }
 
     if (filter === 'year') {
       main.replaceChildren(
-        ...Array.from(main.children).sort(
-          (a, b) => Number(a.attributes.year.value.match(/\d+/)) - Number(b.attributes.year.value.match(/\d+/))
-        )
+        ...Array.from(main.children).sort((a, b) => Number(a.getAttribute('year')) - Number(b.getAttribute('year')))
       );
     }
 
     if (filter === 'price') {
       if (sortDirection === 'increase') {
         main.replaceChildren(
-          ...Array.from(main.children).sort(
-            (a, b) => Number(a.attributes.price.value.match(/\d+/)) - Number(b.attributes.price.value.match(/\d+/))
-          )
+          ...Array.from(main.children).sort((a, b) => Number(a.getAttribute('price')) - Number(b.getAttribute('price')))
         );
       }
       if (sortDirection === 'decrease') {
         main.replaceChildren(
-          ...Array.from(main.children).sort(
-            (a, b) => Number(b.attributes.price.value.match(/\d+/)) - Number(a.attributes.price.value.match(/\d+/))
-          )
+          ...Array.from(main.children).sort((a, b) => Number(b.getAttribute('price')) - Number(a.getAttribute('price')))
         );
       }
     }
-
-    // if (this.arrCardsFiltered.length === 0) {
-    //   this.arrCardsFiltered = this.arrCards;
-    // }
-
-    // if (filter === 'default') {
-    //   this.arrCardsFiltered.sort((a: Card, b: Card) => {
-    //     return a.id - b.id;
-    //   });
-    // }
-    // if (filter === 'year') {
-    //   this.arrCardsFiltered.sort((a: Card, b: Card) => {
-    //     return a.year - b.year;
-    //   });
-    // }
-    // if (filter === 'price') {
-    //   if (sortDirection === 'increase') {
-    //     this.arrCardsFiltered.sort((a: Card, b: Card) => {
-    //       return a.price - b.price;
-    //     });
-    //   }
-    //   if (sortDirection === 'decrease') {
-    //     this.arrCardsFiltered.sort((a: Card, b: Card) => {
-    //       return b.price - a.price;
-    //     });
-    //   }
-    // }
   }
 }
 

@@ -66,7 +66,7 @@ class CheckboxFilter {
       item.insertAdjacentElement('beforeend', label);
       this.filterBody.insertAdjacentElement('beforeend', item);
 
-      checkbox.onchange = (e: Event) => this.filter();
+      checkbox.onchange = () => this.filter();
     });
   }
 
@@ -77,7 +77,6 @@ class CheckboxFilter {
 
     this.filteredCards = [...checkedCheckboxes].map((el: HTMLInputElement) => el.value);
     this.genEvent('checkbox');
-    console.log(this.filteredCards);
   }
 }
 
