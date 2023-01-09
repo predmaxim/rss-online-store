@@ -55,8 +55,8 @@ class ProductCards {
     }
   }
 
-  async render() {
-    const arrShow: Card[] = this.arrCards.slice();
+  async render(opt?: 'all') {
+    const arrShow: Card[] = opt && opt === 'all' ? this.arrCards.slice() : this.arrCardsFiltered.slice();
 
     const productsView = document.querySelector('.products-view') as HTMLElement; // .products-list
 
@@ -68,6 +68,10 @@ class ProductCards {
       const article = document.createElement('div');
       article.className = 'article';
       article.setAttribute('idCard', `${arrShow[i].id}`); // add attribute for each card with string (number of card)
+      article.setAttribute('price', `${arrShow[i].price}`);
+      article.setAttribute('year', `${arrShow[i].year}`);
+      article.setAttribute('category', `${arrShow[i].category}`);
+      article.setAttribute('stock', `${arrShow[i].stock}`);
 
       if (productsView !== null && article !== null) {
         productsView.append(article);
@@ -155,6 +159,7 @@ class ProductCards {
       this.arrCards.forEach((card: Card) => {
         (<HTMLDivElement>document.querySelector(`.article[idcard="${card.id}"]`)).classList.add('dispnone');
       });
+
       this.arrCardsFiltered.forEach((card: Card) => {
         (<HTMLDivElement>document.querySelector(`.article[idcard="${card.id}"]`)).classList.remove('dispnone');
       });
@@ -183,31 +188,67 @@ class ProductCards {
   }
 
   sort(filter: 'price' | 'year' | 'default', sortDirection?: 'increase' | 'decrease') {
-    if (this.arrCardsFiltered.length === 0) {
-      this.arrCardsFiltered = this.arrCards;
-    }
+    const main = <HTMLDivElement>document.querySelector('.products-view');
+
     if (filter === 'default') {
-      this.arrCardsFiltered.sort((a: Card, b: Card) => {
-        return a.id - b.id;
-      });
+      main.replaceChildren(
+        ...Array.from(main.children).sort(
+          (a, b) => Number(a.attributes.idcard.value.match(/\d+/)) - Number(b.attributes.idcard.value.match(/\d+/))
+        )
+      );
     }
+
     if (filter === 'year') {
-      this.arrCardsFiltered.sort((a: Card, b: Card) => {
-        return a.year - b.year;
-      });
+      main.replaceChildren(
+        ...Array.from(main.children).sort(
+          (a, b) => Number(a.attributes.year.value.match(/\d+/)) - Number(b.attributes.year.value.match(/\d+/))
+        )
+      );
     }
+
     if (filter === 'price') {
       if (sortDirection === 'increase') {
-        this.arrCardsFiltered.sort((a: Card, b: Card) => {
-          return a.price - b.price;
-        });
+        main.replaceChildren(
+          ...Array.from(main.children).sort(
+            (a, b) => Number(a.attributes.price.value.match(/\d+/)) - Number(b.attributes.price.value.match(/\d+/))
+          )
+        );
       }
       if (sortDirection === 'decrease') {
-        this.arrCardsFiltered.sort((a: Card, b: Card) => {
-          return b.price - a.price;
-        });
+        main.replaceChildren(
+          ...Array.from(main.children).sort(
+            (a, b) => Number(b.attributes.price.value.match(/\d+/)) - Number(a.attributes.price.value.match(/\d+/))
+          )
+        );
       }
     }
+
+    // if (this.arrCardsFiltered.length === 0) {
+    //   this.arrCardsFiltered = this.arrCards;
+    // }
+
+    // if (filter === 'default') {
+    //   this.arrCardsFiltered.sort((a: Card, b: Card) => {
+    //     return a.id - b.id;
+    //   });
+    // }
+    // if (filter === 'year') {
+    //   this.arrCardsFiltered.sort((a: Card, b: Card) => {
+    //     return a.year - b.year;
+    //   });
+    // }
+    // if (filter === 'price') {
+    //   if (sortDirection === 'increase') {
+    //     this.arrCardsFiltered.sort((a: Card, b: Card) => {
+    //       return a.price - b.price;
+    //     });
+    //   }
+    //   if (sortDirection === 'decrease') {
+    //     this.arrCardsFiltered.sort((a: Card, b: Card) => {
+    //       return b.price - a.price;
+    //     });
+    //   }
+    // }
   }
 }
 
