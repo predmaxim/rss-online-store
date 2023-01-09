@@ -1,4 +1,3 @@
-import cards from '../../../pages/shop/shop';
 import arrCards from '../../../data/cardsData';
 import Card from '../../../data/Card';
 
@@ -8,31 +7,37 @@ interface CheckboxFilterOptions {
 }
 
 class CheckboxFilter {
-  filterBody;
-  filterType;
+  filterBody: HTMLElement;
+  filterType: string;
+  filteredCards: string[];
 
   constructor(options: CheckboxFilterOptions) {
     const { filterBody, filterType } = options;
     this.filterBody = <HTMLElement>document.querySelector(filterBody);
     this.filterType = filterType;
+    this.filteredCards = [];
   }
 
   init() {
     const names = arrCards.reduce((acc: (string | number)[], cur: Card): (string | number)[] => {
-      //! FIXME: more universal - acc.push(cur[this.filterType]);
-
       if (this.filterType === 'category') acc.push(cur.category);
       if (this.filterType === 'year') acc.push(cur.year);
       return [...new Set(acc)];
     }, []);
 
     this.render(names);
-    this.filter();
   }
 
   genEvent(name: string): void {
-    const event = new Event(`${name}`, { bubbles: true });
+    const event = new CustomEvent(`${name}`, {
+      bubbles: true,
+      detail: { name: this.filterType, values: this.getFilteredCards() },
+    });
     dispatchEvent(event);
+  }
+
+  getFilteredCards() {
+    return this.filteredCards;
   }
 
   render(names: (string | number)[]) {
@@ -47,7 +52,7 @@ class CheckboxFilter {
 
       const checkbox = <HTMLInputElement>document.createElement('input');
       checkbox.type = 'checkbox';
-      checkbox.name = `checkbox-${name}`;
+      checkbox.name = `${name}`;
       checkbox.id = `checkbox-${name}`;
       checkbox.value = `${name}`;
       checkbox.className = `filter-type-checkbox__checkbox checkbox-${this.filterType}`;
@@ -60,75 +65,19 @@ class CheckboxFilter {
       item.insertAdjacentElement('beforeend', checkbox);
       item.insertAdjacentElement('beforeend', label);
       this.filterBody.insertAdjacentElement('beforeend', item);
-      // console.log(...[checkbox, label]);
+
+      checkbox.onchange = (e: Event) => this.filter();
     });
   }
 
   filter() {
-    //! FIXME: make more universal
-    //! const allCheckboxes: Element[] = [...this.filterBody.querySelectorAll(`.checkbox-${this.filterType}`)];
+    const checkedCheckboxes: NodeListOf<HTMLInputElement> = document.querySelectorAll(
+      `.filter-type-checkbox-${this.filterType} .checkbox-${this.filterType}:checked`
+    );
 
-    if (this.filterType === 'year') {
-      const allCheckboxYear: NodeListOf<Element> = document.querySelectorAll('.checkbox-year');
-      const arrAllCheckboxYear: Element[] = Array.from(allCheckboxYear);
-
-      arrAllCheckboxYear.forEach((checkbox: Element) => {
-        checkbox.addEventListener('change', (event: Event) => {
-          this.genEvent('checkbox');
-
-          if ((event.target as HTMLInputElement).checked) {
-            const value = (event.target as HTMLInputElement).value.toString();
-            cards.addCheckedYear(value);
-            cards.createArrFiltered();
-            if (cards.getArrCardsFiltered().length === 0) {
-              cards.renederNon();
-            } else {
-              cards.render();
-            }
-          } else {
-            const value = (event.target as HTMLInputElement).value.toString();
-            cards.delCheckedYear(value);
-            cards.createArrFiltered();
-            if (cards.getArrCardsFiltered().length === 0) {
-              cards.renederNon();
-            } else {
-              cards.render();
-            }
-          }
-        });
-      });
-    }
-
-    if (this.filterType === 'category') {
-      const allCheckboxCategory: NodeListOf<Element> = document.querySelectorAll('.checkbox-category');
-      const arrAllCheckboxCategory: Element[] = Array.from(allCheckboxCategory);
-
-      arrAllCheckboxCategory.forEach((checkbox: Element) => {
-        checkbox.addEventListener('change', (event: Event) => {
-          this.genEvent('checkbox');
-
-          if ((event.target as HTMLInputElement).checked) {
-            const value = (event.target as HTMLInputElement).value.toString();
-            cards.addCheckedCategory(value);
-            cards.createArrFiltered();
-            if (cards.getArrCardsFiltered().length === 0) {
-              cards.renederNon();
-            } else {
-              cards.render();
-            }
-          } else {
-            const value = (event.target as HTMLInputElement).value.toString();
-            cards.delCheckedCategory(value);
-            cards.createArrFiltered();
-            if (cards.getArrCardsFiltered().length === 0) {
-              cards.renederNon();
-            } else {
-              cards.render();
-            }
-          }
-        });
-      });
-    }
+    this.filteredCards = [...checkedCheckboxes].map((el: HTMLInputElement) => el.value);
+    this.genEvent('checkbox');
+    console.log(this.filteredCards);
   }
 }
 
