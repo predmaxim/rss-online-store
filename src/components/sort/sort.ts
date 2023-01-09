@@ -1,4 +1,4 @@
-import cards from '../../pages/shop/shop';
+import cards from '../product-grid/product-grid';
 console.log('Import Sort');
 
 const sortSelect = document.querySelector('.sort__select') as HTMLSelectElement;
