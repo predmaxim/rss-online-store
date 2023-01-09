@@ -6,18 +6,16 @@ console.log('Import Filter');
 
 // Mobile filter button
 const showFilterBtn = (): void => {
-  if (matchMediaQueries('max', '640px')) {
-    const filterIcon = <HTMLDivElement>document.querySelector('.filter-icon');
-    const filter = <HTMLDivElement>document.querySelector('.filter-container');
+  const filterIcon = <HTMLDivElement>document.querySelector('.filter-icon');
+  const filter = <HTMLDivElement>document.querySelector('.filter-container');
 
-    filterIcon.classList.toggle('hide');
+  filterIcon.classList.toggle('hide');
+  filter.classList.toggle('hide');
+
+  filterIcon.addEventListener('click', (): void => {
     filter.classList.toggle('hide');
-
-    filterIcon.addEventListener('click', (): void => {
-      filter.classList.toggle('hide');
-      filterIcon.classList.toggle('active');
-    });
-  }
+    filterIcon.classList.toggle('active');
+  });
 };
 
 // checkbox
@@ -66,4 +64,6 @@ const stockSlider: DualSlider = new DualSlider(optionsInStock);
 priceSlider.init();
 stockSlider.init();
 
-export { showFilterBtn, priceSlider, stockSlider, checkboxFilterYear, checkboxFilterCategory };
+if (matchMediaQueries('max', '640px')) showFilterBtn();
+
+export { priceSlider, stockSlider, checkboxFilterYear, checkboxFilterCategory };
