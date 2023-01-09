@@ -13,16 +13,17 @@ interface DualSliderOptions {
 }
 
 class DualSlider {
-  fromSlider;
-  toSlider;
-  fromVal;
-  toVal;
-  filterBody;
-  filterType;
-  sliderColor;
-  rangeColor;
-  min = 0;
-  max = 0;
+  fromSlider: HTMLInputElement;
+  toSlider: HTMLInputElement;
+  fromVal: HTMLDivElement;
+  toVal: HTMLDivElement;
+  filterBody: HTMLElement;
+  filterType: string;
+  sliderColor: string;
+  rangeColor: string;
+  min: number;
+  max: number;
+  filteredVal: number[] = [];
 
   constructor(options: DualSliderOptions) {
     const { fromSlider, toSlider, fromVal, toVal, filterBody, filterType, sliderColor, rangeColor } = options;
@@ -40,6 +41,9 @@ class DualSlider {
     this.filterType = filterType;
     this.sliderColor = sliderColor;
     this.rangeColor = rangeColor;
+    this.min = 0;
+    this.max = 0;
+    this.filteredVal = [];
   }
 
   init(): void {
@@ -48,18 +52,32 @@ class DualSlider {
     this.render();
   }
 
+  filter() {
+    if (this.min === this.getMinMaxVal()[0] && this.max === this.getMinMaxVal()[1]) {
+      this.filteredVal.length = 0;
+    } else {
+      this.filteredVal = this.getMinMaxVal();
+    }
+    this.genEvent('dual-slider');
+  }
+
+  getFilteredVal() {
+    return this.filteredVal;
+  }
+
   genEvent(name: string): void {
     const event = new CustomEvent(`${name}`, {
       bubbles: true,
-      detail: { name: this.filterType, minmax: this.getMinMaxVal() },
+      detail: {
+        name: this.filterType,
+        values: this.getFilteredVal(),
+      },
     });
     dispatchEvent(event);
   }
 
   getMinMaxVal(): number[] {
-    const min = this.getParsed(this.fromSlider, this.toSlider)[0];
-    const max = this.getParsed(this.fromSlider, this.toSlider)[1];
-    return [min, max];
+    return this.getParsed(this.fromSlider, this.toSlider);
   }
 
   getMinMax(arr: Card[]): number[] {
@@ -115,14 +133,13 @@ class DualSlider {
 
     this.filterBody.insertAdjacentElement('beforeend', rangeContainer);
 
-    // this.setValue();
     this.fillSlider(this.fromSlider, this.toSlider, this.sliderColor, this.rangeColor, this.toSlider);
     this.setToggleAccessible(this.toSlider);
 
     this.fromSlider.oninput = () => this.controlFromSlider(this.fromSlider, this.toSlider, this.fromVal);
     this.toSlider.oninput = () => this.controlToSlider(this.fromSlider, this.toSlider, this.toVal);
-    this.fromSlider.onchange = () => this.genEvent('dual-slider');
-    this.toSlider.onchange = () => this.genEvent('dual-slider');
+    this.fromSlider.onchange = () => this.filter();
+    this.toSlider.onchange = () => this.filter();
   }
 
   controlFromSlider(fromSlider: HTMLInputElement, toSlider: HTMLInputElement, fromVal: HTMLDivElement): void {
