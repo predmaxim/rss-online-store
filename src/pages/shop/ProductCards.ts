@@ -78,7 +78,7 @@ class ProductCards {
       productImg.addEventListener('click', () => {
         window.location.href = 'product.html';
         localStorage.setItem('idCard', arrShow[i].id.toString());
-      })
+      });
 
       const imgImport = await import(`../../assets/img/products/${arrShow[i].images[0]}`);
       productImg.src = imgImport.default;

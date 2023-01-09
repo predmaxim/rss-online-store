@@ -1,16 +1,14 @@
-import Card from "../../data/Card";
-import arrCards from "../../data/cardsData";
-
+import Card from '../../data/Card';
+import arrCards from '../../data/cardsData';
 
 export class ProductView {
   cardInfo: Card;
 
   constructor(numId: number) {
-    this.cardInfo = arrCards[numId - 1]
+    this.cardInfo = arrCards[numId - 1];
   }
 
   async fillPage() {
-
     const nameInfo = <HTMLElement>document.querySelector('.os-h1');
     nameInfo.textContent = this.cardInfo.name;
 
@@ -32,8 +30,8 @@ export class ProductView {
     arrGalleryImg.forEach((img: HTMLImageElement) => {
       img.addEventListener('click', () => {
         imgCurrent.src = img.src;
-      })
-    })
+      });
+    });
 
     const spanInfoYear = <HTMLSpanElement>document.querySelector('.product-year-data');
     spanInfoYear.textContent = this.cardInfo.year.toString();
@@ -49,6 +47,5 @@ export class ProductView {
 
     const spanInfoPrice = <HTMLSpanElement>document.querySelector('.product-currency-data');
     spanInfoPrice.textContent = this.cardInfo.price.toString();
-
   }
 }
