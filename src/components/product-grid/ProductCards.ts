@@ -90,6 +90,11 @@ class ProductCards {
       productImg.src = imgImport.default;
       articleImg.append(productImg);
 
+      productImg.addEventListener('click', () => {
+        window.location.href = 'product.html';
+        localStorage.setItem('idCard', arrShow[i].id.toString());
+      })
+
       const articleHeader = document.createElement('p');
       articleHeader.className = 'article__header';
       articleHeader.textContent = `${arrShow[i].name}`;

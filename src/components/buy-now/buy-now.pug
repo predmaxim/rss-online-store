@@ -1,0 +1,43 @@
+.pop-up-all
+
+  .pop-up-card
+
+    .block-confirm-data
+      h1.h1-pop-up Order successfully completed
+      p Thank you for choosing us!
+
+    .pop-up-heder
+      h1.h1-pop-up Order
+      img.close-btn-img(src=require("Img/close-icon.svg"))
+
+    .pop-up-form
+      form.buy-now-form(action="/#" method="get")
+
+        .block-buy-now-user-info
+          .buy-now-user-info-left-column
+            .block-input
+              label.label-input-buy-now(for="input-buy-now-name") Name and Surname
+              input#input-buy-now-name.input-buy-now(type="text" placeholder="Your name and surname" required)
+            .block-input
+              label.label-input-buy-now(for="input-buy-now-email") Email
+              input#input-buy-now-email.input-buy-now(type="email" placeholder="Your email" required)
+          .buy-now-user-info-right-column
+            .block-input
+              label.label-input-buy-now(for="input-buy-now-address") Address
+              input#input-buy-now-address.input-buy-now(type="text" placeholder="Your address" required)
+            .block-input
+              label.label-input-buy-now(for="input-buy-now-phone") Phone Number
+              input#input-buy-now-phone.input-buy-now(type="tel" name="phone_number" placeholder="+575655660" required)
+
+        .block-buy-now-card-info
+          img.img-by-now-bankpassen(src=require("Img/bankpassen-1.png") alt="cards")
+          .block-card-details
+            label.label-input-buy-now Credit card details
+            .block-card-details-1
+              input#input-buy-now-num-card.input-buy-now-card.input-buy-now(type="number" placeholder="Card Number" required)
+            .block-card-details-2
+              input#input-buy-now-valid-card.input-buy-now-card.input-buy-now(type="text" placeholder="Valid Thru" required)
+              input#input-buy-now-cvc-card.input-buy-now-card.input-buy-now(type="number" placeholder="CVC / CVV" required)
+
+        button.buy-now-confirm-btn Confirm
+

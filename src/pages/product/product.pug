@@ -6,12 +6,15 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="icon" type="image/png" href=require('Img/favicon.png'))
     link(rel="stylesheet" href=require("Src/style.scss"))
+    link(rel="stylesheet" href=require("BuyNow/buy-now.scss"))
     script(src=require("Src/index.ts"), defer)
     script(src=require("product.ts"), defer)
     title RSS Online Shop | Product
     include Base/mixins.pug
 
   body.os-body.os-body-product.theme-light
+
+    include BuyNow/buy-now.pug
 
     include ShopHeader/shop-header.pug
 
@@ -23,7 +26,7 @@ html(lang="en")
         .container
 
           .page-header
-            h1.os-h1 Product Name
+            h1.os-h1
             .os-bread-crambs
               a(href="#" ) home
               span  /
@@ -38,29 +41,31 @@ html(lang="en")
               .product-gallery__items
 
                 .product-gallery-item
-                  img.product-gallery-item-img(src=require("Img/products/1-1.png"))
+                  img.product-gallery-item-img.product-gallery-item-img-1
+                  //- (src=require("Img/products/1-1.png"))
 
                 .product-gallery-item
-                  img.product-gallery-item-img(src=require("Img/products/1-1.png"))
+                  img.product-gallery-item-img.product-gallery-item-img-2
+                  //- (src=require("Img/products/1-1.png"))
 
                 .product-gallery-item
-                  img.product-gallery-item-img(src=require("Img/products/1-1.png"))
+                  img.product-gallery-item-img.product-gallery-item-img-3
+                  //- (src=require("Img/products/1-1.png"))
 
 
               .product-gallery__cuurent-image
-                //- img.product-gallery__cuurent-image-img(src=require("Img/products/1-1.png"))
-                +imgr("Img/products/1-1.png", "product-name", 700, [240, 320, 480, 700], "product-gallery__cuurent-image-img img")
+                img.product-gallery__cuurent-image-img
+                //- +imgr("Img/products/1-1.png", "product-name", 700, [240, 320, 480, 700], "product-gallery__cuurent-image-img img")
 
 
             .column-right.product-info
-              p.product-info__item.product-year Year: #[span.product-year-data Scarf]
-              p.product-info__item.product-category Category: #[span.product-category-data Scarf]
-              p.product-info__item.product-instock Availability: #[span.product-in-stock-data 13] #[span.product-in-stock-units pc.]
-              p.product-info__item.product-description 100% wool, assorted colors. Check availability of colors and yarn types
-              p.product-info__item.product-price #[span.product-currency €] #[span.product-currency-data 230]
+              p.product-info__item.product-year Year: #[span.product-year-data]
+              p.product-info__item.product-category Category: #[span.product-category-data]
+              p.product-info__item.product-instock Availability: #[span.product-in-stock-data] #[span.product-in-stock-units pc.]
+              p.product-info__item.product-description
+              p.product-info__item.product-price #[span.product-currency €] #[span.product-currency-data]
+              include Buttons/buy-now-btn.pug
               include Buttons/add-to-cart-btn.pug
-
-
 
 
 
