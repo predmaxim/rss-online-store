@@ -6,7 +6,7 @@
 // .os-main-product {}
 
 .product-section {
-  margin-bottom: 200px;
+  margin-bottom: 300px;
 
   // .container {}
 
@@ -120,13 +120,15 @@
     }
   }
 
+  @media screen and (width <=$tablet) {
+    margin-bottom: 200px;
+  }
+
   @media screen and (width <=$mobile) {
     .page-header {
       margin-bottom: 20px;
     }
-  }
 
-  @media screen and (width <=$mobile) {
     .product-body {
       flex-direction: column;
     }

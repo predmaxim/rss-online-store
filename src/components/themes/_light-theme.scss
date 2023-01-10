@@ -4,6 +4,7 @@
   --secondary-color: #554e4b;
   --white-bg: #ffffff;
   --light-bg: #fcfaf9;
+  --light-gray-bg: rgb(245 239 236 / 30%);
   --dark-bg: #292827;
   --text-color: #392e2a;
   --text-color-alt: #ffffff;
@@ -14,6 +15,7 @@
   --selection-hover: #fff4de;
   --dimmed-border-placeholder: #c1b1aa;
   --mini-cart-color: #836c63;
+  --layer: rgb(57 46 42 / 26%);
 
   --box-shadow-x: 0px 4px 38px -10px rgb(0 0 0 / 25%);
   --box-shadow-l: 0px 4px 38px -10px rgb(0 0 0 / 18%);
@@ -42,6 +44,7 @@
   }
 
   .view {
+
     &__list,
     &__grid {
       .view-icon {
