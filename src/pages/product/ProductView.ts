@@ -12,6 +12,9 @@ export class ProductView {
     const nameInfo = <HTMLElement>document.querySelector('.os-h1');
     nameInfo.textContent = this.cardInfo.name;
 
+    const productName = <HTMLImageElement>document.querySelector('.os-bread-crambs .product-name');
+    productName.textContent = ` ${this.cardInfo.name}`;
+
     const imgCurrent = <HTMLImageElement>document.querySelector('.product-gallery__cuurent-image-img');
     const imgGallery1 = <HTMLImageElement>document.querySelector('.product-gallery-item-img-1');
     const imgImport1 = await import(`../../assets/img/products/${this.cardInfo.images[0]}`);
