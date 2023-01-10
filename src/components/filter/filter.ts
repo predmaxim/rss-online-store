@@ -100,9 +100,20 @@ function clearFilter(e: MouseEvent): void {
 
 function copyLink(e: MouseEvent) {
   e.preventDefault();
-  navigator.clipboard.writeText(window.location.href).then(() => {
-    console.log('Link copied!');
-  });
+  navigator.clipboard
+    .writeText(window.location.href)
+    .then(() => {
+      console.log('Link copied!');
+    })
+    .then(() => {
+      const target = <HTMLAnchorElement>e.target;
+      target.textContent = 'Link Copied';
+      target.style.color = 'red';
+      setTimeout(() => {
+        target.textContent = 'Copy Link';
+        target.style.color = '';
+      }, 2000);
+    });
 }
 
 filtersQty();
