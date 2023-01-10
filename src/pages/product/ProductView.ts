@@ -12,8 +12,16 @@ export class ProductView {
     const nameInfo = <HTMLElement>document.querySelector('.os-h1');
     nameInfo.textContent = this.cardInfo.name;
 
-    const productName = <HTMLImageElement>document.querySelector('.os-bread-crambs .product-name');
+    const productName = <HTMLSpanElement>document.querySelector('.os-bread-crambs .product-name');
     productName.textContent = ` ${this.cardInfo.name}`;
+
+    const productCategory = <HTMLAnchorElement>document.querySelector('.os-bread-crambs .product-category');
+    productCategory.textContent = ` ${this.cardInfo.category[0].toUpperCase()}${this.cardInfo.category.slice(1)}`;
+    productCategory.href = `${productCategory.href}?filter=category&category=${this.cardInfo.category}`;
+
+    const producYear = <HTMLAnchorElement>document.querySelector('.os-bread-crambs .product-year');
+    producYear.textContent = ` ${String(this.cardInfo.year)[0].toUpperCase()}${String(this.cardInfo.year).slice(1)}`;
+    producYear.href = `${producYear.href}?filter=year&year=${this.cardInfo.year}`;
 
     const imgCurrent = <HTMLImageElement>document.querySelector('.product-gallery__cuurent-image-img');
     const imgGallery1 = <HTMLImageElement>document.querySelector('.product-gallery-item-img-1');
