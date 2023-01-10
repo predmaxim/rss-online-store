@@ -9,5 +9,4 @@ sortSelect.addEventListener('change', function () {
   if (value === 'price-increase') cards.sort('price', 'increase');
   if (value === 'price-decrease') cards.sort('price', 'decrease');
   if (value === 'year') cards.sort('year');
-  // cards.render();
 });
