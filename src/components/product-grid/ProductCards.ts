@@ -24,7 +24,7 @@ class ProductCards {
   genEvent(name: string): void {
     const event = new CustomEvent(`${name}`, {
       bubbles: true,
-      detail: { filteredVal: this.filteredVal },
+      // detail: { filteredQty: this.arrCardsFiltered.length },
     });
     dispatchEvent(event);
   }
@@ -93,7 +93,7 @@ class ProductCards {
       productImg.addEventListener('click', () => {
         window.location.href = 'product.html';
         localStorage.setItem('idCard', arrShow[i].id.toString());
-      })
+      });
 
       const articleHeader = document.createElement('p');
       articleHeader.className = 'article__header';
@@ -162,11 +162,12 @@ class ProductCards {
 
     const showFiltered = () => {
       this.arrCards.forEach((card: Card) => {
-        (<HTMLDivElement>document.querySelector(`.article[idcard="${card.id}"]`)).classList.add('dispnone');
+        const cardElem = <HTMLDivElement>document.querySelector(`.article[idcard="${card.id}"]`);
+        if (cardElem) cardElem.classList.add('dispnone');
       });
-
       this.arrCardsFiltered.forEach((card: Card) => {
-        (<HTMLDivElement>document.querySelector(`.article[idcard="${card.id}"]`)).classList.remove('dispnone');
+        const cardElem = <HTMLDivElement>document.querySelector(`.article[idcard="${card.id}"]`);
+        if (cardElem) cardElem.classList.remove('dispnone');
       });
     };
 
@@ -183,7 +184,6 @@ class ProductCards {
     }, []);
 
     showFiltered();
-
     this.renderNon();
     this.genEvent('filter');
   }
