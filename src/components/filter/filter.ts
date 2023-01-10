@@ -98,11 +98,20 @@ function clearFilter(e: MouseEvent): void {
   cards.filter('category', []);
 }
 
+function copyLink(e: MouseEvent) {
+  e.preventDefault();
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    console.log('Link copied!');
+  });
+}
+
 filtersQty();
 addEventListener('dual-slider', ((e: CustomEvent) => applyFilter(e)) as EventListener);
 addEventListener('checkbox', ((e: CustomEvent) => applyFilter(e)) as EventListener);
 addEventListener('filter', (() => filtersQty()) as EventListener);
 (<HTMLDivElement>document.querySelector('.clear-filter')).addEventListener('click', ((e: MouseEvent) =>
   clearFilter(e)) as EventListener);
+(<HTMLDivElement>document.querySelector('.copy-link')).addEventListener('click', ((e: MouseEvent) =>
+  copyLink(e)) as EventListener);
 
 export { priceSlider, stockSlider, checkboxFilterYear, checkboxFilterCategory };
