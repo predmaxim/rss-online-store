@@ -1,6 +1,7 @@
 import { DualSliderOptions, DualSlider } from './dual-slider/DualSlider';
 import { CheckboxFilterOptions, CheckboxFilter } from './checkbox/CheckboxFilter';
 import { matchMediaQueries } from '../base/base';
+import cards from '../product-grid/product-grid';
 
 console.log('Import Filter');
 
@@ -65,5 +66,58 @@ priceSlider.init();
 stockSlider.init();
 
 if (matchMediaQueries('max', '640px')) showFilterBtn();
+
+function applyFilter(e: CustomEvent): void {
+  cards.filter(e.detail.name, e.detail.values);
+}
+
+function filtersQty() {
+  const qty = <HTMLDivElement>document.querySelector('.products__qty');
+  const qtyElem = <HTMLDivElement>document.querySelector('.filtered');
+
+  qtyElem.classList.remove('hide');
+  qty.textContent = String(cards.arrCardsFiltered.length);
+}
+
+function clearFilter(e: MouseEvent): void {
+  e.preventDefault();
+
+  const qty = <HTMLDivElement>document.querySelector('.products__qty');
+  const cardElems = <NodeListOf<HTMLDivElement>>document.querySelectorAll(`.article`);
+  const noMatches = <HTMLDivElement>document.querySelector(`.no-matches`);
+  const checkboxes = <NodeListOf<HTMLInputElement>>(
+    document.querySelectorAll(`.filter-container__body .filter-type-checkbox__checkbox`)
+  );
+  const fromSliders = <NodeListOf<HTMLInputElement>>(
+    document.querySelectorAll(`.filter-container__body .from-slider-price`)
+  );
+  const toSliders = <NodeListOf<HTMLInputElement>>document.querySelectorAll(`.filter-container__body .to-slider-price`);
+
+  [...checkboxes].forEach((el: HTMLInputElement) => (el.checked = false));
+  [...fromSliders].forEach((el: HTMLInputElement) => (el.value = el.min));
+  [...toSliders].forEach((el: HTMLInputElement) => (el.value = el.max));
+
+  priceSlider.setValue();
+  stockSlider.setValue();
+  priceSlider.setFillSlider();
+  stockSlider.setFillSlider();
+
+  [...cardElems].forEach((el: HTMLDivElement) => {
+    el.classList.remove('dispnone');
+  });
+
+  noMatches ? noMatches.remove() : false;
+
+  qty.textContent = String(cards.arrCards.length);
+  cards.arrCardsFiltered.length = 0;
+  cards.filteredVal = {};
+}
+
+filtersQty();
+addEventListener('dual-slider', ((e: CustomEvent) => applyFilter(e)) as EventListener);
+addEventListener('checkbox', ((e: CustomEvent) => applyFilter(e)) as EventListener);
+addEventListener('filter', (() => filtersQty()) as EventListener);
+(<HTMLDivElement>document.querySelector('.clear-filter')).addEventListener('click', ((e: MouseEvent) =>
+  clearFilter(e)) as EventListener);
 
 export { priceSlider, stockSlider, checkboxFilterYear, checkboxFilterCategory };

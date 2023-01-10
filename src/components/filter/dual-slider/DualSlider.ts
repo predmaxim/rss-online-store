@@ -189,6 +189,10 @@ class DualSlider {
       ${sliderColor} 100%)`;
   }
 
+  setFillSlider() {
+    this.fillSlider(this.fromSlider, this.toSlider, this.sliderColor, this.rangeColor, this.toSlider);
+  }
+
   getParsed(currentFrom: HTMLInputElement, currentTo: HTMLInputElement): number[] {
     const from = parseInt(currentFrom.value, 10);
     const to = parseInt(currentTo.value, 10);
