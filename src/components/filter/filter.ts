@@ -81,36 +81,21 @@ function filtersQty() {
 
 function clearFilter(e: MouseEvent): void {
   e.preventDefault();
-
-  const qty = <HTMLDivElement>document.querySelector('.products__qty');
-  const cardElems = <NodeListOf<HTMLDivElement>>document.querySelectorAll(`.article`);
-  const noMatches = <HTMLDivElement>document.querySelector(`.no-matches`);
   const checkboxes = <NodeListOf<HTMLInputElement>>(
     document.querySelectorAll(`.filter-container__body .filter-type-checkbox__checkbox`)
   );
-  const fromSliders = <NodeListOf<HTMLInputElement>>(
-    document.querySelectorAll(`.filter-container__body .from-slider-price`)
-  );
-  const toSliders = <NodeListOf<HTMLInputElement>>document.querySelectorAll(`.filter-container__body .to-slider-price`);
 
   [...checkboxes].forEach((el: HTMLInputElement) => (el.checked = false));
-  [...fromSliders].forEach((el: HTMLInputElement) => (el.value = el.min));
-  [...toSliders].forEach((el: HTMLInputElement) => (el.value = el.max));
 
   priceSlider.setValue();
   stockSlider.setValue();
   priceSlider.setFillSlider();
   stockSlider.setFillSlider();
 
-  [...cardElems].forEach((el: HTMLDivElement) => {
-    el.classList.remove('dispnone');
-  });
-
-  noMatches ? noMatches.remove() : false;
-
-  qty.textContent = String(cards.arrCards.length);
-  cards.arrCardsFiltered.length = 0;
-  cards.filteredVal = {};
+  cards.filter('price', []);
+  cards.filter('stock', []);
+  cards.filter('year', []);
+  cards.filter('category', []);
 }
 
 filtersQty();
