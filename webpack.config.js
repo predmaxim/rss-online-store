@@ -1,5 +1,3 @@
-// import path, { join } from 'path';
-// import CopyWebpackPlugin from 'copy-webpack-plugin';
 import PugPlugin, { loader as pugLoader } from 'pug-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import { fileURLToPath } from 'url';
@@ -41,7 +39,6 @@ const devServer = (isDev) =>
           open: false,
           hot: false,
           port: 9000,
-          // historyApiFallback: true,
         },
         stats: 'errors-only',
       }
@@ -63,7 +60,6 @@ export default ({ isDev }) => ({
     clean: true,
   },
   optimization: {
-    // splitChunks: { chunks: 'all' },
     minimize: !isDev,
   },
   resolve: { alias: aliases, extensions: ['.ts', '.js'] },
@@ -77,7 +73,6 @@ export default ({ isDev }) => ({
         test: /\.ts$/i,
         use: 'ts-loader',
         exclude: /node_modules/,
-        // include: '/src/**/*',
         generator: { filename: '[name].[contenthash:8][ext]' },
       },
       {
@@ -85,24 +80,6 @@ export default ({ isDev }) => ({
         type: 'asset/resource',
         generator: { filename: 'assets/img/[name].[hash:8][ext]' },
       },
-      // {
-      //   test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
-      //   type: 'asset/resource',
-      //   use: {
-      //     loader: 'responsive-loader',
-      //     options: {
-      //       // outputPath: 'assets/img/',
-      //       name: 'assets/img/[name].[ext]',
-      //       quality: 50, // default 85
-      //       format: 'webp',
-      //       esModule: true,
-      //       exclude: 'assets/img/favicon.png',
-      //       // cacheDirectory: true,
-      //       // emitFile: false,
-      //       // publicPath: '/',
-      //     },
-      //   },
-      // },
       {
         test: /\.(?:woff(2)?|eot|ttf|otf)$/i,
         type: 'asset/inline',
@@ -116,7 +93,6 @@ export default ({ isDev }) => ({
           {
             loader: 'sass-loader',
             options: {
-              // sassOptions: { outputStyle: 'compressed' },
             },
           },
         ],
@@ -129,14 +105,7 @@ export default ({ isDev }) => ({
       pretty: true,
       extractCss: { filename: 'assets/css/[name].[contenthash:8].css' },
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: join(__dirname, 'src/favicon.ico'),
-    //       to: './',
-    //     },
-    //   ],
-    // }),
+
   ],
   ...devServer(isDev),
 });
