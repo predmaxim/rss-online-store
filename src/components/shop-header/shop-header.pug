@@ -1,0 +1,20 @@
+header.shop-header
+
+  .container
+
+    .left-column
+
+      include HeaderMenu/header-menu.pug
+
+    .center-column
+      a(href="/#home")
+        img.header-logo(src=require("Img/logo-vertical.svg") width="147" alt=logo)
+
+
+    .right-column
+
+      .header-phone
+        .header-phone__icon
+        a.header-phone__text(href="tel:+57-56-55-66") +57-56-55-66
+
+      include MiniCart/mini-cart.pug

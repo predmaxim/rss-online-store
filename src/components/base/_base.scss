@@ -1,0 +1,149 @@
+.os-body {
+  font-family: var(--font-opensans);
+  line-height: 1.7;
+  height: 100%;
+  transition: 0.3s;
+  font-size: 20px;
+
+  .os-main {
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: $desktop;
+    padding: 0 var(--desktop-paddings);
+    margin: 0 auto;
+    position: relative;
+
+    @media screen and (width <=$notebook) {
+      max-width: $notebook;
+      padding: 0 var(--notebook-paddings);
+    }
+
+    @media screen and (width <=$tablet) {
+      max-width: $tablet;
+      padding: 0 var(--tablet-paddings);
+    }
+
+    @media screen and (width <=$mobile) {
+      max-width: $mobile;
+      padding: 0 var(--mobile-paddings);
+    }
+  }
+
+  .os-h1,
+  .os-h2,
+  .os-h3,
+  .os-h4,
+  .os-h5 {
+    font-weight: 700;
+    margin: 0;
+    color: var(--headers-color);
+  }
+
+  .os-h1 {
+    font-size: 50px;
+  }
+
+  .os-h2 {
+    font-size: 40px;
+  }
+
+  .os-h3 {
+    font-size: 30px;
+  }
+
+  .os-h4 {
+    font-size: 24px;
+  }
+
+  .os-h5 {
+    font-size: 18px;
+  }
+
+  @media screen and (width <=$mobile) {
+    .os-h1 {
+      font-size: 40px;
+    }
+
+    .os-h2 {
+      font-size: 30px;
+    }
+
+    .os-h3 {
+      font-size: 20px;
+    }
+
+    .os-h4 {
+      font-size: 18px;
+    }
+
+    .os-h5 {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-color);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--link-color);
+    transition: 0.3s;
+
+    &:hover {
+      color: var(--link-color-hover);
+    }
+  }
+
+  .os-footer a,
+  .os-footer p {
+    color: var(--link-color-alt);
+  }
+
+  .page-header {
+    text-align: center;
+
+    .os-bread-crambs {
+      font-size: 16px;
+      color: var(--secondary-color);
+    }
+  }
+
+  .dispnone {
+    display: none !important;
+  }
+
+  .hide {
+    opacity: 0%;
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+
+  option {
+    font-size: 18px;
+  }
+
+  @media screen and (width <=$tablet) {
+    .page-header {
+      .os-h1 {
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media screen and (width <=$mobile) {
+    font-size: 16px;
+
+    .page-header {
+      .os-bread-crambs {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.nav {
+  .nav-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+
+    &.active::before {
+      mask: url("Img/close-icon.svg") no-repeat center;
+      // background-color: var(--primary-color);
+    }
+
+    &::before {
+      transition: 0.3s;
+      content: " ";
+      mask: url("img/nav-icon.svg") no-repeat center;
+      // background-color: var(--text-color);
+      position: absolute;
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover::before {
+      // background-color: var(--primary-color);
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  font-weight: 700;
+  margin-top: 20px;
+  padding: 40px 30px;
+  min-width: 200px;
+  border-radius: var(--border-radius-l);
+  background: var(--menu-bg);
+  box-shadow: var(--box-shadow-s);
+  transition: 0.3s;
+  z-index: 10;
+
+  &__item {
+    font-size: var(--desktop-nav-font-size);
+    margin-bottom: 10px;
+    transition: 0.3s;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+
+    @media screen and (width <=$notebook) {
+      font-size: var(--notebook-nav-font-size);
+    }
+
+    @media screen and (width <=$tablet) {
+      font-size: var(--tablet-nav-font-size);
+    }
+
+    @media screen and (width <=$mobile) {
+      font-size: var(--mobile-nav-font-size);
+    }
+  }
+}

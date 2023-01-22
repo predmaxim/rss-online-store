@@ -1,0 +1,14 @@
+.filter-type-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__item {
+    display: flex;
+    gap: 15px;
+
+    // .checkbox {}
+
+    // .checkbox__label {}
+  }
+}

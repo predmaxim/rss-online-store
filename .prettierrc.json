@@ -1,0 +1,24 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "printWidth": 120,
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "proseWrap": "always",
+  "singleAttributePerLine": true,
+  "htmlWhitespaceSensitivity": "css",
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.js"
+      ],
+      "options": {
+        "singleQuote": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+button.filter-icon.filter-button.hide(href="#") Filter
+.filter-container
+
+  .filter-container__head
+
+    h4.aside-header.os-h4 Filters
+
+    .filtered.hide
+      p.products__qty 0
+      a.clear-filter(href="#")
+
+  .filter-container__body
+
+    .filter.filter-type-checkbox.filter-type-checkbox-category
+
+    .filter.filter-type-checkbox.filter-type-checkbox-year
+
+    .filter.filter-type-dual-slider.filter-type-dual-slider-price
+      //- include dual-slider/dual-slider-price.pug
+
+    .filter.filter-type-dual-slider.filter-type-dual-slider-instock
+      //- include dual-slider/dual-slider-instock.pug
+
+    .filter-container__footer
+      a.copy-link(href="#") Copy Link

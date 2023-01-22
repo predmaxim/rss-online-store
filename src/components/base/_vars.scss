@@ -1,0 +1,48 @@
+// VIEWPOINTS
+$desktop: 1680px;
+$notebook: 1280px;
+$tablet: 940px;
+$mobile: 640px;
+
+:root {
+  --border-radius-x: 20px;
+  --border-radius-l: 10px;
+  --border-radius-s: 5px;
+
+  // TYPOGRAPHY
+  --font-opensans: "Open Sans", sans-serif;
+  --font-bilbo: "Bilbo Swash Caps", sans-serif;
+
+  // BODY
+  --desktop-margins: 75px;
+  --notebook-margins: 40px;
+  --tablet-margins: 20px;
+  --mobile-margins: 20px;
+
+  --desktop-paddings: 30px;
+  --notebook-paddings: 25px;
+  --tablet-paddings: 25px;
+  --mobile-paddings: 20px;
+
+  // HEADER SIZES
+  --desktop-header-top-margin: 50px;
+  --notebook-header-top-margin: 50px;
+  --tablet-header-top-margin: 40px;
+  --mobile-header-top-margin: 30px;
+
+  --desktop-home-header-height: 50px;
+  --notebook-home-header-height: 50px;
+  --tablet-home-header-height: 40px;
+  --mobile-home-header-height: 30px;
+
+  --desktop-header-height: 147px;
+  --notebook-header-height: 130px;
+  --tablet-header-height: 100px;
+  --mobile-header-height: 70px;
+
+  // NAV
+  --desktop-nav-font-size: 18px;
+  --notebook-nav-font-size: 18px;
+  --tablet-nav-font-size: 16px;
+  --mobile-nav-font-size: 16px;
+}

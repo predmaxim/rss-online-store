@@ -1,0 +1,119 @@
+.os-body-product {
+  background: var(--light-bg);
+  position: relative;
+}
+
+
+.product-section {
+  margin-bottom: 300px;
+
+  .page-header {
+    margin-bottom: 50px;
+
+    @media screen and (width <=$mobile) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .product-body {
+    display: flex;
+    gap: 50px;
+
+    .column-left {
+      flex: 1;
+      display: flex;
+      gap: 15px;
+    }
+
+    .column-right {
+      flex: 1;
+    }
+
+    .product-gallery {
+      .product-gallery__items {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+
+        .product-gallery-item {
+          max-width: 100px;
+          min-width: 50px;
+          background: var(--white-bg);
+          border-radius: 10px;
+
+          .product-gallery-item-img {
+            background: var(--white-bg);
+            border-radius: 10px;
+            width: 100%;
+          }
+
+          &.active,
+          &:hover {
+            box-shadow: 0 0 0 2px var(--dimmed-border-placeholder);
+          }
+        }
+      }
+
+      .product-gallery__cuurent-image {
+        flex: 1 1 600px;
+        min-width: 215px;
+
+        .product-gallery__cuurent-image-img {
+          background: var(--white-bg);
+          border-radius: 10px;
+          width: 100%;
+        }
+      }
+    }
+
+    .product-info {
+      .product-info__item {
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .product-in-stock-units,
+      .product-in-stock-data,
+      .product-category-data,
+      .product-year-data {
+        font-weight: 400;
+      }
+
+      .product-description {
+        font-weight: 400;
+        margin-top: 15px;
+        font-size: 16px;
+      }
+
+      .product-price {
+        margin-top: 20px;
+        font-weight: 700;
+        font-size: 30px;
+        color: var(--primary-color);
+      }
+
+      .add-to-cart-btn {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  @media screen and (width <=$tablet) {
+    margin-bottom: 200px;
+  }
+
+  @media screen and (width <=$mobile) {
+    .page-header {
+      margin-bottom: 20px;
+    }
+
+    .product-body {
+      flex-direction: column;
+    }
+
+    .add-to-cart-btn {
+      width: 100%;
+    }
+  }
+}

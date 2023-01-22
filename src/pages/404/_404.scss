@@ -1,0 +1,36 @@
+.os-404-section {
+  padding: 70px 0 calc(var(--desktop-header-height) * 1.5);
+  transition: 0.3s;
+
+  @media screen and (width <=$notebook) {
+    padding: 70px 0 calc(var(--notebook-header-height) * 1.5);
+  }
+
+  @media screen and (width <=$tablet) {
+    padding: 70px 0 calc(var(--tablet-header-height) * 1.5);
+  }
+
+  @media screen and (width <=$mobile) {
+    padding: 70px 0 calc(var(--mobile-header-height) * 1.5);
+  }
+
+  .container {
+    text-align: center;
+
+    // .sad-emoticon {}
+
+    .header-404 {
+      font-size: 100px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 15px 0 10px;
+    }
+
+    .desc-404 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 50px;
+    }
+
+  }
+}

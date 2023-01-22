@@ -1,0 +1,72 @@
+.home-header {
+  position: absolute;
+  top: var(--desktop-header-top-margin);
+  height: var(--desktop-home-header-height);
+  width: 100%;
+
+  @media screen and (width <=$notebook) {
+    top: var(--notebook-header-top-margin);
+    height: var(--notebook-home-header-height);
+  }
+
+  @media screen and (width <=$tablet) {
+    top: var(--tablet-header-top-margin);
+    height: var(--tablet-home-header-height);
+  }
+
+  @media screen and (width <=$mobile) {
+    top: var(--mobile-header-top-margin);
+    height: var(--mobile-home-header-height);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // .left-column {}
+
+    .right-column {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+
+      .header-phone {
+        transition: 0.3s;
+        position: relative;
+
+        @media screen and (width <=$mobile) {
+          display: none;
+        }
+
+        &::before {
+          content: " ";
+          mask: url("img/phone-icon.svg") no-repeat center;
+          background-color: #48794d;
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          bottom: 5px;
+          left: -40px;
+          transition: 0.3s;
+        }
+
+        &:hover {
+          color: var(--primary-color);
+
+          &::before {
+            background-color: var(--primary-color);
+          }
+        }
+
+        // &__icon {}
+
+        &__text {
+          font-weight: 700;
+        }
+      }
+
+      // .primary-btn {}
+    }
+  }
+}
