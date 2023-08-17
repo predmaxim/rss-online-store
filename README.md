@@ -1,1 +1,1 @@
-# rss-online-store
+# RSS-online-store
